@@ -1,0 +1,1956 @@
+{
+  "summary": {
+    "samples": 200,
+    "max_tokens": 702,
+    "requests": {
+      "short": 180,
+      "medium": 20,
+      "over_generation_limit": 0
+    },
+    "nonconforming_topics": [],
+    "topics": {
+      "T0481": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0482": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0483": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0484": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0485": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0486": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0487": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0488": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0489": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0490": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0491": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0492": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0493": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0494": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0495": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0496": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0497": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0498": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0499": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      },
+      "T0500": {
+        "short": 9,
+        "medium": 1,
+        "over_generation_limit": 0
+      }
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "T0481-01",
+      "slot": 1,
+      "tokens": 111,
+      "band": "short",
+      "per_question": {
+        "判断": 111
+      }
+    },
+    {
+      "sample_id": "T0481-02",
+      "slot": 2,
+      "tokens": 117,
+      "band": "short",
+      "per_question": {
+        "判断": 117
+      }
+    },
+    {
+      "sample_id": "T0481-03",
+      "slot": 3,
+      "tokens": 107,
+      "band": "short",
+      "per_question": {
+        "判断": 107
+      }
+    },
+    {
+      "sample_id": "T0481-04",
+      "slot": 4,
+      "tokens": 702,
+      "band": "medium",
+      "per_question": {
+        "判断": 702
+      }
+    },
+    {
+      "sample_id": "T0481-05",
+      "slot": 5,
+      "tokens": 91,
+      "band": "short",
+      "per_question": {
+        "判断": 91
+      }
+    },
+    {
+      "sample_id": "T0481-06",
+      "slot": 6,
+      "tokens": 90,
+      "band": "short",
+      "per_question": {
+        "判断": 90
+      }
+    },
+    {
+      "sample_id": "T0481-07",
+      "slot": 7,
+      "tokens": 96,
+      "band": "short",
+      "per_question": {
+        "判断": 96
+      }
+    },
+    {
+      "sample_id": "T0481-08",
+      "slot": 8,
+      "tokens": 90,
+      "band": "short",
+      "per_question": {
+        "判断": 90
+      }
+    },
+    {
+      "sample_id": "T0481-09",
+      "slot": 9,
+      "tokens": 87,
+      "band": "short",
+      "per_question": {
+        "判断": 87
+      }
+    },
+    {
+      "sample_id": "T0481-10",
+      "slot": 10,
+      "tokens": 119,
+      "band": "short",
+      "per_question": {
+        "类别": 119,
+        "程度": 110,
+        "事实": 107
+      }
+    },
+    {
+      "sample_id": "T0482-01",
+      "slot": 1,
+      "tokens": 124,
+      "band": "short",
+      "per_question": {
+        "判断": 124
+      }
+    },
+    {
+      "sample_id": "T0482-02",
+      "slot": 2,
+      "tokens": 118,
+      "band": "short",
+      "per_question": {
+        "判断": 118
+      }
+    },
+    {
+      "sample_id": "T0482-03",
+      "slot": 3,
+      "tokens": 101,
+      "band": "short",
+      "per_question": {
+        "判断": 101
+      }
+    },
+    {
+      "sample_id": "T0482-04",
+      "slot": 4,
+      "tokens": 125,
+      "band": "short",
+      "per_question": {
+        "判断": 125
+      }
+    },
+    {
+      "sample_id": "T0482-05",
+      "slot": 5,
+      "tokens": 581,
+      "band": "medium",
+      "per_question": {
+        "判断": 581
+      }
+    },
+    {
+      "sample_id": "T0482-06",
+      "slot": 6,
+      "tokens": 100,
+      "band": "short",
+      "per_question": {
+        "判断": 100
+      }
+    },
+    {
+      "sample_id": "T0482-07",
+      "slot": 7,
+      "tokens": 106,
+      "band": "short",
+      "per_question": {
+        "判断": 106
+      }
+    },
+    {
+      "sample_id": "T0482-08",
+      "slot": 8,
+      "tokens": 97,
+      "band": "short",
+      "per_question": {
+        "判断": 97
+      }
+    },
+    {
+      "sample_id": "T0482-09",
+      "slot": 9,
+      "tokens": 103,
+      "band": "short",
+      "per_question": {
+        "判断": 103
+      }
+    },
+    {
+      "sample_id": "T0482-10",
+      "slot": 10,
+      "tokens": 129,
+      "band": "short",
+      "per_question": {
+        "类别": 129,
+        "程度": 117,
+        "事实": 118
+      }
+    },
+    {
+      "sample_id": "T0483-01",
+      "slot": 1,
+      "tokens": 172,
+      "band": "short",
+      "per_question": {
+        "判断": 172
+      }
+    },
+    {
+      "sample_id": "T0483-02",
+      "slot": 2,
+      "tokens": 157,
+      "band": "short",
+      "per_question": {
+        "判断": 157
+      }
+    },
+    {
+      "sample_id": "T0483-03",
+      "slot": 3,
+      "tokens": 107,
+      "band": "short",
+      "per_question": {
+        "判断": 107
+      }
+    },
+    {
+      "sample_id": "T0483-04",
+      "slot": 4,
+      "tokens": 146,
+      "band": "short",
+      "per_question": {
+        "判断": 146
+      }
+    },
+    {
+      "sample_id": "T0483-05",
+      "slot": 5,
+      "tokens": 92,
+      "band": "short",
+      "per_question": {
+        "判断": 92
+      }
+    },
+    {
+      "sample_id": "T0483-06",
+      "slot": 6,
+      "tokens": 544,
+      "band": "medium",
+      "per_question": {
+        "判断": 544
+      }
+    },
+    {
+      "sample_id": "T0483-07",
+      "slot": 7,
+      "tokens": 109,
+      "band": "short",
+      "per_question": {
+        "判断": 109
+      }
+    },
+    {
+      "sample_id": "T0483-08",
+      "slot": 8,
+      "tokens": 116,
+      "band": "short",
+      "per_question": {
+        "判断": 116
+      }
+    },
+    {
+      "sample_id": "T0483-09",
+      "slot": 9,
+      "tokens": 110,
+      "band": "short",
+      "per_question": {
+        "判断": 110
+      }
+    },
+    {
+      "sample_id": "T0483-10",
+      "slot": 10,
+      "tokens": 157,
+      "band": "short",
+      "per_question": {
+        "类别": 157,
+        "程度": 144,
+        "事实": 143
+      }
+    },
+    {
+      "sample_id": "T0484-01",
+      "slot": 1,
+      "tokens": 147,
+      "band": "short",
+      "per_question": {
+        "判断": 147
+      }
+    },
+    {
+      "sample_id": "T0484-02",
+      "slot": 2,
+      "tokens": 131,
+      "band": "short",
+      "per_question": {
+        "判断": 131
+      }
+    },
+    {
+      "sample_id": "T0484-03",
+      "slot": 3,
+      "tokens": 98,
+      "band": "short",
+      "per_question": {
+        "判断": 98
+      }
+    },
+    {
+      "sample_id": "T0484-04",
+      "slot": 4,
+      "tokens": 155,
+      "band": "short",
+      "per_question": {
+        "判断": 155
+      }
+    },
+    {
+      "sample_id": "T0484-05",
+      "slot": 5,
+      "tokens": 101,
+      "band": "short",
+      "per_question": {
+        "判断": 101
+      }
+    },
+    {
+      "sample_id": "T0484-06",
+      "slot": 6,
+      "tokens": 104,
+      "band": "short",
+      "per_question": {
+        "判断": 104
+      }
+    },
+    {
+      "sample_id": "T0484-07",
+      "slot": 7,
+      "tokens": 640,
+      "band": "medium",
+      "per_question": {
+        "判断": 640
+      }
+    },
+    {
+      "sample_id": "T0484-08",
+      "slot": 8,
+      "tokens": 109,
+      "band": "short",
+      "per_question": {
+        "判断": 109
+      }
+    },
+    {
+      "sample_id": "T0484-09",
+      "slot": 9,
+      "tokens": 112,
+      "band": "short",
+      "per_question": {
+        "判断": 112
+      }
+    },
+    {
+      "sample_id": "T0484-10",
+      "slot": 10,
+      "tokens": 163,
+      "band": "short",
+      "per_question": {
+        "类别": 163,
+        "程度": 153,
+        "事实": 162
+      }
+    },
+    {
+      "sample_id": "T0485-01",
+      "slot": 1,
+      "tokens": 135,
+      "band": "short",
+      "per_question": {
+        "判断": 135
+      }
+    },
+    {
+      "sample_id": "T0485-02",
+      "slot": 2,
+      "tokens": 134,
+      "band": "short",
+      "per_question": {
+        "判断": 134
+      }
+    },
+    {
+      "sample_id": "T0485-03",
+      "slot": 3,
+      "tokens": 105,
+      "band": "short",
+      "per_question": {
+        "判断": 105
+      }
+    },
+    {
+      "sample_id": "T0485-04",
+      "slot": 4,
+      "tokens": 166,
+      "band": "short",
+      "per_question": {
+        "判断": 166
+      }
+    },
+    {
+      "sample_id": "T0485-05",
+      "slot": 5,
+      "tokens": 119,
+      "band": "short",
+      "per_question": {
+        "判断": 119
+      }
+    },
+    {
+      "sample_id": "T0485-06",
+      "slot": 6,
+      "tokens": 120,
+      "band": "short",
+      "per_question": {
+        "判断": 120
+      }
+    },
+    {
+      "sample_id": "T0485-07",
+      "slot": 7,
+      "tokens": 129,
+      "band": "short",
+      "per_question": {
+        "判断": 129
+      }
+    },
+    {
+      "sample_id": "T0485-08",
+      "slot": 8,
+      "tokens": 107,
+      "band": "short",
+      "per_question": {
+        "判断": 107
+      }
+    },
+    {
+      "sample_id": "T0485-09",
+      "slot": 9,
+      "tokens": 520,
+      "band": "medium",
+      "per_question": {
+        "判断": 520
+      }
+    },
+    {
+      "sample_id": "T0485-10",
+      "slot": 10,
+      "tokens": 171,
+      "band": "short",
+      "per_question": {
+        "类别": 171,
+        "程度": 158,
+        "事实": 164
+      }
+    },
+    {
+      "sample_id": "T0486-01",
+      "slot": 1,
+      "tokens": 598,
+      "band": "medium",
+      "per_question": {
+        "判断": 598
+      }
+    },
+    {
+      "sample_id": "T0486-02",
+      "slot": 2,
+      "tokens": 117,
+      "band": "short",
+      "per_question": {
+        "判断": 117
+      }
+    },
+    {
+      "sample_id": "T0486-03",
+      "slot": 3,
+      "tokens": 114,
+      "band": "short",
+      "per_question": {
+        "判断": 114
+      }
+    },
+    {
+      "sample_id": "T0486-04",
+      "slot": 4,
+      "tokens": 138,
+      "band": "short",
+      "per_question": {
+        "判断": 138
+      }
+    },
+    {
+      "sample_id": "T0486-05",
+      "slot": 5,
+      "tokens": 95,
+      "band": "short",
+      "per_question": {
+        "判断": 95
+      }
+    },
+    {
+      "sample_id": "T0486-06",
+      "slot": 6,
+      "tokens": 99,
+      "band": "short",
+      "per_question": {
+        "判断": 99
+      }
+    },
+    {
+      "sample_id": "T0486-07",
+      "slot": 7,
+      "tokens": 126,
+      "band": "short",
+      "per_question": {
+        "判断": 126
+      }
+    },
+    {
+      "sample_id": "T0486-08",
+      "slot": 8,
+      "tokens": 130,
+      "band": "short",
+      "per_question": {
+        "判断": 130
+      }
+    },
+    {
+      "sample_id": "T0486-09",
+      "slot": 9,
+      "tokens": 103,
+      "band": "short",
+      "per_question": {
+        "判断": 103
+      }
+    },
+    {
+      "sample_id": "T0486-10",
+      "slot": 10,
+      "tokens": 167,
+      "band": "short",
+      "per_question": {
+        "类别": 167,
+        "程度": 149,
+        "事实": 153
+      }
+    },
+    {
+      "sample_id": "T0487-01",
+      "slot": 1,
+      "tokens": 118,
+      "band": "short",
+      "per_question": {
+        "判断": 118
+      }
+    },
+    {
+      "sample_id": "T0487-02",
+      "slot": 2,
+      "tokens": 553,
+      "band": "medium",
+      "per_question": {
+        "判断": 553
+      }
+    },
+    {
+      "sample_id": "T0487-03",
+      "slot": 3,
+      "tokens": 122,
+      "band": "short",
+      "per_question": {
+        "判断": 122
+      }
+    },
+    {
+      "sample_id": "T0487-04",
+      "slot": 4,
+      "tokens": 131,
+      "band": "short",
+      "per_question": {
+        "判断": 131
+      }
+    },
+    {
+      "sample_id": "T0487-05",
+      "slot": 5,
+      "tokens": 101,
+      "band": "short",
+      "per_question": {
+        "判断": 101
+      }
+    },
+    {
+      "sample_id": "T0487-06",
+      "slot": 6,
+      "tokens": 108,
+      "band": "short",
+      "per_question": {
+        "判断": 108
+      }
+    },
+    {
+      "sample_id": "T0487-07",
+      "slot": 7,
+      "tokens": 111,
+      "band": "short",
+      "per_question": {
+        "判断": 111
+      }
+    },
+    {
+      "sample_id": "T0487-08",
+      "slot": 8,
+      "tokens": 99,
+      "band": "short",
+      "per_question": {
+        "判断": 99
+      }
+    },
+    {
+      "sample_id": "T0487-09",
+      "slot": 9,
+      "tokens": 104,
+      "band": "short",
+      "per_question": {
+        "判断": 104
+      }
+    },
+    {
+      "sample_id": "T0487-10",
+      "slot": 10,
+      "tokens": 132,
+      "band": "short",
+      "per_question": {
+        "类别": 132,
+        "程度": 120,
+        "事实": 116
+      }
+    },
+    {
+      "sample_id": "T0488-01",
+      "slot": 1,
+      "tokens": 104,
+      "band": "short",
+      "per_question": {
+        "判断": 104
+      }
+    },
+    {
+      "sample_id": "T0488-02",
+      "slot": 2,
+      "tokens": 119,
+      "band": "short",
+      "per_question": {
+        "判断": 119
+      }
+    },
+    {
+      "sample_id": "T0488-03",
+      "slot": 3,
+      "tokens": 110,
+      "band": "short",
+      "per_question": {
+        "判断": 110
+      }
+    },
+    {
+      "sample_id": "T0488-04",
+      "slot": 4,
+      "tokens": 133,
+      "band": "short",
+      "per_question": {
+        "判断": 133
+      }
+    },
+    {
+      "sample_id": "T0488-05",
+      "slot": 5,
+      "tokens": 94,
+      "band": "short",
+      "per_question": {
+        "判断": 94
+      }
+    },
+    {
+      "sample_id": "T0488-06",
+      "slot": 6,
+      "tokens": 89,
+      "band": "short",
+      "per_question": {
+        "判断": 89
+      }
+    },
+    {
+      "sample_id": "T0488-07",
+      "slot": 7,
+      "tokens": 109,
+      "band": "short",
+      "per_question": {
+        "判断": 109
+      }
+    },
+    {
+      "sample_id": "T0488-08",
+      "slot": 8,
+      "tokens": 565,
+      "band": "medium",
+      "per_question": {
+        "判断": 565
+      }
+    },
+    {
+      "sample_id": "T0488-09",
+      "slot": 9,
+      "tokens": 90,
+      "band": "short",
+      "per_question": {
+        "判断": 90
+      }
+    },
+    {
+      "sample_id": "T0488-10",
+      "slot": 10,
+      "tokens": 168,
+      "band": "short",
+      "per_question": {
+        "类别": 168,
+        "程度": 153,
+        "事实": 155
+      }
+    },
+    {
+      "sample_id": "T0489-01",
+      "slot": 1,
+      "tokens": 118,
+      "band": "short",
+      "per_question": {
+        "判断": 118
+      }
+    },
+    {
+      "sample_id": "T0489-02",
+      "slot": 2,
+      "tokens": 120,
+      "band": "short",
+      "per_question": {
+        "判断": 120
+      }
+    },
+    {
+      "sample_id": "T0489-03",
+      "slot": 3,
+      "tokens": 674,
+      "band": "medium",
+      "per_question": {
+        "判断": 674
+      }
+    },
+    {
+      "sample_id": "T0489-04",
+      "slot": 4,
+      "tokens": 130,
+      "band": "short",
+      "per_question": {
+        "判断": 130
+      }
+    },
+    {
+      "sample_id": "T0489-05",
+      "slot": 5,
+      "tokens": 99,
+      "band": "short",
+      "per_question": {
+        "判断": 99
+      }
+    },
+    {
+      "sample_id": "T0489-06",
+      "slot": 6,
+      "tokens": 103,
+      "band": "short",
+      "per_question": {
+        "判断": 103
+      }
+    },
+    {
+      "sample_id": "T0489-07",
+      "slot": 7,
+      "tokens": 108,
+      "band": "short",
+      "per_question": {
+        "判断": 108
+      }
+    },
+    {
+      "sample_id": "T0489-08",
+      "slot": 8,
+      "tokens": 97,
+      "band": "short",
+      "per_question": {
+        "判断": 97
+      }
+    },
+    {
+      "sample_id": "T0489-09",
+      "slot": 9,
+      "tokens": 92,
+      "band": "short",
+      "per_question": {
+        "判断": 92
+      }
+    },
+    {
+      "sample_id": "T0489-10",
+      "slot": 10,
+      "tokens": 132,
+      "band": "short",
+      "per_question": {
+        "类别": 132,
+        "程度": 119,
+        "事实": 116
+      }
+    },
+    {
+      "sample_id": "T0490-01",
+      "slot": 1,
+      "tokens": 110,
+      "band": "short",
+      "per_question": {
+        "判断": 110
+      }
+    },
+    {
+      "sample_id": "T0490-02",
+      "slot": 2,
+      "tokens": 111,
+      "band": "short",
+      "per_question": {
+        "判断": 111
+      }
+    },
+    {
+      "sample_id": "T0490-03",
+      "slot": 3,
+      "tokens": 101,
+      "band": "short",
+      "per_question": {
+        "判断": 101
+      }
+    },
+    {
+      "sample_id": "T0490-04",
+      "slot": 4,
+      "tokens": 114,
+      "band": "short",
+      "per_question": {
+        "判断": 114
+      }
+    },
+    {
+      "sample_id": "T0490-05",
+      "slot": 5,
+      "tokens": 95,
+      "band": "short",
+      "per_question": {
+        "判断": 95
+      }
+    },
+    {
+      "sample_id": "T0490-06",
+      "slot": 6,
+      "tokens": 91,
+      "band": "short",
+      "per_question": {
+        "判断": 91
+      }
+    },
+    {
+      "sample_id": "T0490-07",
+      "slot": 7,
+      "tokens": 101,
+      "band": "short",
+      "per_question": {
+        "判断": 101
+      }
+    },
+    {
+      "sample_id": "T0490-08",
+      "slot": 8,
+      "tokens": 99,
+      "band": "short",
+      "per_question": {
+        "判断": 99
+      }
+    },
+    {
+      "sample_id": "T0490-09",
+      "slot": 9,
+      "tokens": 85,
+      "band": "short",
+      "per_question": {
+        "判断": 85
+      }
+    },
+    {
+      "sample_id": "T0490-10",
+      "slot": 10,
+      "tokens": 631,
+      "band": "medium",
+      "per_question": {
+        "类别": 631,
+        "程度": 621,
+        "事实": 618
+      }
+    },
+    {
+      "sample_id": "T0491-01",
+      "slot": 1,
+      "tokens": 171,
+      "band": "short",
+      "per_question": {
+        "判断": 171
+      }
+    },
+    {
+      "sample_id": "T0491-02",
+      "slot": 2,
+      "tokens": 167,
+      "band": "short",
+      "per_question": {
+        "判断": 167
+      }
+    },
+    {
+      "sample_id": "T0491-03",
+      "slot": 3,
+      "tokens": 143,
+      "band": "short",
+      "per_question": {
+        "判断": 143
+      }
+    },
+    {
+      "sample_id": "T0491-04",
+      "slot": 4,
+      "tokens": 148,
+      "band": "short",
+      "per_question": {
+        "判断": 148
+      }
+    },
+    {
+      "sample_id": "T0491-05",
+      "slot": 5,
+      "tokens": 622,
+      "band": "medium",
+      "per_question": {
+        "判断": 622
+      }
+    },
+    {
+      "sample_id": "T0491-06",
+      "slot": 6,
+      "tokens": 157,
+      "band": "short",
+      "per_question": {
+        "判断": 157
+      }
+    },
+    {
+      "sample_id": "T0491-07",
+      "slot": 7,
+      "tokens": 157,
+      "band": "short",
+      "per_question": {
+        "判断": 157
+      }
+    },
+    {
+      "sample_id": "T0491-08",
+      "slot": 8,
+      "tokens": 102,
+      "band": "short",
+      "per_question": {
+        "判断": 102
+      }
+    },
+    {
+      "sample_id": "T0491-09",
+      "slot": 9,
+      "tokens": 111,
+      "band": "short",
+      "per_question": {
+        "判断": 111
+      }
+    },
+    {
+      "sample_id": "T0491-10",
+      "slot": 10,
+      "tokens": 193,
+      "band": "short",
+      "per_question": {
+        "类别": 193,
+        "程度": 179,
+        "事实": 178
+      }
+    },
+    {
+      "sample_id": "T0492-01",
+      "slot": 1,
+      "tokens": 165,
+      "band": "short",
+      "per_question": {
+        "判断": 165
+      }
+    },
+    {
+      "sample_id": "T0492-02",
+      "slot": 2,
+      "tokens": 163,
+      "band": "short",
+      "per_question": {
+        "判断": 163
+      }
+    },
+    {
+      "sample_id": "T0492-03",
+      "slot": 3,
+      "tokens": 114,
+      "band": "short",
+      "per_question": {
+        "判断": 114
+      }
+    },
+    {
+      "sample_id": "T0492-04",
+      "slot": 4,
+      "tokens": 178,
+      "band": "short",
+      "per_question": {
+        "判断": 178
+      }
+    },
+    {
+      "sample_id": "T0492-05",
+      "slot": 5,
+      "tokens": 139,
+      "band": "short",
+      "per_question": {
+        "判断": 139
+      }
+    },
+    {
+      "sample_id": "T0492-06",
+      "slot": 6,
+      "tokens": 143,
+      "band": "short",
+      "per_question": {
+        "判断": 143
+      }
+    },
+    {
+      "sample_id": "T0492-07",
+      "slot": 7,
+      "tokens": 148,
+      "band": "short",
+      "per_question": {
+        "判断": 148
+      }
+    },
+    {
+      "sample_id": "T0492-08",
+      "slot": 8,
+      "tokens": 133,
+      "band": "short",
+      "per_question": {
+        "判断": 133
+      }
+    },
+    {
+      "sample_id": "T0492-09",
+      "slot": 9,
+      "tokens": 521,
+      "band": "medium",
+      "per_question": {
+        "判断": 521
+      }
+    },
+    {
+      "sample_id": "T0492-10",
+      "slot": 10,
+      "tokens": 175,
+      "band": "short",
+      "per_question": {
+        "类别": 175,
+        "程度": 159,
+        "事实": 162
+      }
+    },
+    {
+      "sample_id": "T0493-01",
+      "slot": 1,
+      "tokens": 546,
+      "band": "medium",
+      "per_question": {
+        "判断": 546
+      }
+    },
+    {
+      "sample_id": "T0493-02",
+      "slot": 2,
+      "tokens": 155,
+      "band": "short",
+      "per_question": {
+        "判断": 155
+      }
+    },
+    {
+      "sample_id": "T0493-03",
+      "slot": 3,
+      "tokens": 124,
+      "band": "short",
+      "per_question": {
+        "判断": 124
+      }
+    },
+    {
+      "sample_id": "T0493-04",
+      "slot": 4,
+      "tokens": 159,
+      "band": "short",
+      "per_question": {
+        "判断": 159
+      }
+    },
+    {
+      "sample_id": "T0493-05",
+      "slot": 5,
+      "tokens": 122,
+      "band": "short",
+      "per_question": {
+        "判断": 122
+      }
+    },
+    {
+      "sample_id": "T0493-06",
+      "slot": 6,
+      "tokens": 133,
+      "band": "short",
+      "per_question": {
+        "判断": 133
+      }
+    },
+    {
+      "sample_id": "T0493-07",
+      "slot": 7,
+      "tokens": 136,
+      "band": "short",
+      "per_question": {
+        "判断": 136
+      }
+    },
+    {
+      "sample_id": "T0493-08",
+      "slot": 8,
+      "tokens": 116,
+      "band": "short",
+      "per_question": {
+        "判断": 116
+      }
+    },
+    {
+      "sample_id": "T0493-09",
+      "slot": 9,
+      "tokens": 119,
+      "band": "short",
+      "per_question": {
+        "判断": 119
+      }
+    },
+    {
+      "sample_id": "T0493-10",
+      "slot": 10,
+      "tokens": 185,
+      "band": "short",
+      "per_question": {
+        "类别": 185,
+        "程度": 170,
+        "事实": 167
+      }
+    },
+    {
+      "sample_id": "T0494-01",
+      "slot": 1,
+      "tokens": 147,
+      "band": "short",
+      "per_question": {
+        "判断": 147
+      }
+    },
+    {
+      "sample_id": "T0494-02",
+      "slot": 2,
+      "tokens": 556,
+      "band": "medium",
+      "per_question": {
+        "判断": 556
+      }
+    },
+    {
+      "sample_id": "T0494-03",
+      "slot": 3,
+      "tokens": 126,
+      "band": "short",
+      "per_question": {
+        "判断": 126
+      }
+    },
+    {
+      "sample_id": "T0494-04",
+      "slot": 4,
+      "tokens": 156,
+      "band": "short",
+      "per_question": {
+        "判断": 156
+      }
+    },
+    {
+      "sample_id": "T0494-05",
+      "slot": 5,
+      "tokens": 129,
+      "band": "short",
+      "per_question": {
+        "判断": 129
+      }
+    },
+    {
+      "sample_id": "T0494-06",
+      "slot": 6,
+      "tokens": 118,
+      "band": "short",
+      "per_question": {
+        "判断": 118
+      }
+    },
+    {
+      "sample_id": "T0494-07",
+      "slot": 7,
+      "tokens": 116,
+      "band": "short",
+      "per_question": {
+        "判断": 116
+      }
+    },
+    {
+      "sample_id": "T0494-08",
+      "slot": 8,
+      "tokens": 123,
+      "band": "short",
+      "per_question": {
+        "判断": 123
+      }
+    },
+    {
+      "sample_id": "T0494-09",
+      "slot": 9,
+      "tokens": 113,
+      "band": "short",
+      "per_question": {
+        "判断": 113
+      }
+    },
+    {
+      "sample_id": "T0494-10",
+      "slot": 10,
+      "tokens": 165,
+      "band": "short",
+      "per_question": {
+        "类别": 165,
+        "程度": 153,
+        "事实": 154
+      }
+    },
+    {
+      "sample_id": "T0495-01",
+      "slot": 1,
+      "tokens": 176,
+      "band": "short",
+      "per_question": {
+        "判断": 176
+      }
+    },
+    {
+      "sample_id": "T0495-02",
+      "slot": 2,
+      "tokens": 153,
+      "band": "short",
+      "per_question": {
+        "判断": 153
+      }
+    },
+    {
+      "sample_id": "T0495-03",
+      "slot": 3,
+      "tokens": 111,
+      "band": "short",
+      "per_question": {
+        "判断": 111
+      }
+    },
+    {
+      "sample_id": "T0495-04",
+      "slot": 4,
+      "tokens": 142,
+      "band": "short",
+      "per_question": {
+        "判断": 142
+      }
+    },
+    {
+      "sample_id": "T0495-05",
+      "slot": 5,
+      "tokens": 121,
+      "band": "short",
+      "per_question": {
+        "判断": 121
+      }
+    },
+    {
+      "sample_id": "T0495-06",
+      "slot": 6,
+      "tokens": 547,
+      "band": "medium",
+      "per_question": {
+        "判断": 547
+      }
+    },
+    {
+      "sample_id": "T0495-07",
+      "slot": 7,
+      "tokens": 146,
+      "band": "short",
+      "per_question": {
+        "判断": 146
+      }
+    },
+    {
+      "sample_id": "T0495-08",
+      "slot": 8,
+      "tokens": 114,
+      "band": "short",
+      "per_question": {
+        "判断": 114
+      }
+    },
+    {
+      "sample_id": "T0495-09",
+      "slot": 9,
+      "tokens": 114,
+      "band": "short",
+      "per_question": {
+        "判断": 114
+      }
+    },
+    {
+      "sample_id": "T0495-10",
+      "slot": 10,
+      "tokens": 190,
+      "band": "short",
+      "per_question": {
+        "类别": 190,
+        "程度": 173,
+        "事实": 178
+      }
+    },
+    {
+      "sample_id": "T0496-01",
+      "slot": 1,
+      "tokens": 161,
+      "band": "short",
+      "per_question": {
+        "判断": 161
+      }
+    },
+    {
+      "sample_id": "T0496-02",
+      "slot": 2,
+      "tokens": 157,
+      "band": "short",
+      "per_question": {
+        "判断": 157
+      }
+    },
+    {
+      "sample_id": "T0496-03",
+      "slot": 3,
+      "tokens": 118,
+      "band": "short",
+      "per_question": {
+        "判断": 118
+      }
+    },
+    {
+      "sample_id": "T0496-04",
+      "slot": 4,
+      "tokens": 168,
+      "band": "short",
+      "per_question": {
+        "判断": 168
+      }
+    },
+    {
+      "sample_id": "T0496-05",
+      "slot": 5,
+      "tokens": 108,
+      "band": "short",
+      "per_question": {
+        "判断": 108
+      }
+    },
+    {
+      "sample_id": "T0496-06",
+      "slot": 6,
+      "tokens": 139,
+      "band": "short",
+      "per_question": {
+        "判断": 139
+      }
+    },
+    {
+      "sample_id": "T0496-07",
+      "slot": 7,
+      "tokens": 563,
+      "band": "medium",
+      "per_question": {
+        "判断": 563
+      }
+    },
+    {
+      "sample_id": "T0496-08",
+      "slot": 8,
+      "tokens": 109,
+      "band": "short",
+      "per_question": {
+        "判断": 109
+      }
+    },
+    {
+      "sample_id": "T0496-09",
+      "slot": 9,
+      "tokens": 111,
+      "band": "short",
+      "per_question": {
+        "判断": 111
+      }
+    },
+    {
+      "sample_id": "T0496-10",
+      "slot": 10,
+      "tokens": 189,
+      "band": "short",
+      "per_question": {
+        "类别": 189,
+        "程度": 173,
+        "事实": 178
+      }
+    },
+    {
+      "sample_id": "T0497-01",
+      "slot": 1,
+      "tokens": 112,
+      "band": "short",
+      "per_question": {
+        "判断": 112
+      }
+    },
+    {
+      "sample_id": "T0497-02",
+      "slot": 2,
+      "tokens": 128,
+      "band": "short",
+      "per_question": {
+        "判断": 128
+      }
+    },
+    {
+      "sample_id": "T0497-03",
+      "slot": 3,
+      "tokens": 108,
+      "band": "short",
+      "per_question": {
+        "判断": 108
+      }
+    },
+    {
+      "sample_id": "T0497-04",
+      "slot": 4,
+      "tokens": 554,
+      "band": "medium",
+      "per_question": {
+        "判断": 554
+      }
+    },
+    {
+      "sample_id": "T0497-05",
+      "slot": 5,
+      "tokens": 109,
+      "band": "short",
+      "per_question": {
+        "判断": 109
+      }
+    },
+    {
+      "sample_id": "T0497-06",
+      "slot": 6,
+      "tokens": 110,
+      "band": "short",
+      "per_question": {
+        "判断": 110
+      }
+    },
+    {
+      "sample_id": "T0497-07",
+      "slot": 7,
+      "tokens": 116,
+      "band": "short",
+      "per_question": {
+        "判断": 116
+      }
+    },
+    {
+      "sample_id": "T0497-08",
+      "slot": 8,
+      "tokens": 115,
+      "band": "short",
+      "per_question": {
+        "判断": 115
+      }
+    },
+    {
+      "sample_id": "T0497-09",
+      "slot": 9,
+      "tokens": 121,
+      "band": "short",
+      "per_question": {
+        "判断": 121
+      }
+    },
+    {
+      "sample_id": "T0497-10",
+      "slot": 10,
+      "tokens": 150,
+      "band": "short",
+      "per_question": {
+        "类别": 150,
+        "程度": 144,
+        "事实": 141
+      }
+    },
+    {
+      "sample_id": "T0498-01",
+      "slot": 1,
+      "tokens": 106,
+      "band": "short",
+      "per_question": {
+        "判断": 106
+      }
+    },
+    {
+      "sample_id": "T0498-02",
+      "slot": 2,
+      "tokens": 111,
+      "band": "short",
+      "per_question": {
+        "判断": 111
+      }
+    },
+    {
+      "sample_id": "T0498-03",
+      "slot": 3,
+      "tokens": 105,
+      "band": "short",
+      "per_question": {
+        "判断": 105
+      }
+    },
+    {
+      "sample_id": "T0498-04",
+      "slot": 4,
+      "tokens": 131,
+      "band": "short",
+      "per_question": {
+        "判断": 131
+      }
+    },
+    {
+      "sample_id": "T0498-05",
+      "slot": 5,
+      "tokens": 92,
+      "band": "short",
+      "per_question": {
+        "判断": 92
+      }
+    },
+    {
+      "sample_id": "T0498-06",
+      "slot": 6,
+      "tokens": 92,
+      "band": "short",
+      "per_question": {
+        "判断": 92
+      }
+    },
+    {
+      "sample_id": "T0498-07",
+      "slot": 7,
+      "tokens": 101,
+      "band": "short",
+      "per_question": {
+        "判断": 101
+      }
+    },
+    {
+      "sample_id": "T0498-08",
+      "slot": 8,
+      "tokens": 533,
+      "band": "medium",
+      "per_question": {
+        "判断": 533
+      }
+    },
+    {
+      "sample_id": "T0498-09",
+      "slot": 9,
+      "tokens": 103,
+      "band": "short",
+      "per_question": {
+        "判断": 103
+      }
+    },
+    {
+      "sample_id": "T0498-10",
+      "slot": 10,
+      "tokens": 137,
+      "band": "short",
+      "per_question": {
+        "类别": 137,
+        "程度": 126,
+        "事实": 130
+      }
+    },
+    {
+      "sample_id": "T0499-01",
+      "slot": 1,
+      "tokens": 136,
+      "band": "short",
+      "per_question": {
+        "判断": 136
+      }
+    },
+    {
+      "sample_id": "T0499-02",
+      "slot": 2,
+      "tokens": 141,
+      "band": "short",
+      "per_question": {
+        "判断": 141
+      }
+    },
+    {
+      "sample_id": "T0499-03",
+      "slot": 3,
+      "tokens": 577,
+      "band": "medium",
+      "per_question": {
+        "判断": 577
+      }
+    },
+    {
+      "sample_id": "T0499-04",
+      "slot": 4,
+      "tokens": 139,
+      "band": "short",
+      "per_question": {
+        "判断": 139
+      }
+    },
+    {
+      "sample_id": "T0499-05",
+      "slot": 5,
+      "tokens": 127,
+      "band": "short",
+      "per_question": {
+        "判断": 127
+      }
+    },
+    {
+      "sample_id": "T0499-06",
+      "slot": 6,
+      "tokens": 137,
+      "band": "short",
+      "per_question": {
+        "判断": 137
+      }
+    },
+    {
+      "sample_id": "T0499-07",
+      "slot": 7,
+      "tokens": 139,
+      "band": "short",
+      "per_question": {
+        "判断": 139
+      }
+    },
+    {
+      "sample_id": "T0499-08",
+      "slot": 8,
+      "tokens": 104,
+      "band": "short",
+      "per_question": {
+        "判断": 104
+      }
+    },
+    {
+      "sample_id": "T0499-09",
+      "slot": 9,
+      "tokens": 116,
+      "band": "short",
+      "per_question": {
+        "判断": 116
+      }
+    },
+    {
+      "sample_id": "T0499-10",
+      "slot": 10,
+      "tokens": 174,
+      "band": "short",
+      "per_question": {
+        "类别": 174,
+        "程度": 160,
+        "事实": 152
+      }
+    },
+    {
+      "sample_id": "T0500-01",
+      "slot": 1,
+      "tokens": 128,
+      "band": "short",
+      "per_question": {
+        "判断": 128
+      }
+    },
+    {
+      "sample_id": "T0500-02",
+      "slot": 2,
+      "tokens": 122,
+      "band": "short",
+      "per_question": {
+        "判断": 122
+      }
+    },
+    {
+      "sample_id": "T0500-03",
+      "slot": 3,
+      "tokens": 105,
+      "band": "short",
+      "per_question": {
+        "判断": 105
+      }
+    },
+    {
+      "sample_id": "T0500-04",
+      "slot": 4,
+      "tokens": 148,
+      "band": "short",
+      "per_question": {
+        "判断": 148
+      }
+    },
+    {
+      "sample_id": "T0500-05",
+      "slot": 5,
+      "tokens": 113,
+      "band": "short",
+      "per_question": {
+        "判断": 113
+      }
+    },
+    {
+      "sample_id": "T0500-06",
+      "slot": 6,
+      "tokens": 113,
+      "band": "short",
+      "per_question": {
+        "判断": 113
+      }
+    },
+    {
+      "sample_id": "T0500-07",
+      "slot": 7,
+      "tokens": 123,
+      "band": "short",
+      "per_question": {
+        "判断": 123
+      }
+    },
+    {
+      "sample_id": "T0500-08",
+      "slot": 8,
+      "tokens": 116,
+      "band": "short",
+      "per_question": {
+        "判断": 116
+      }
+    },
+    {
+      "sample_id": "T0500-09",
+      "slot": 9,
+      "tokens": 122,
+      "band": "short",
+      "per_question": {
+        "判断": 122
+      }
+    },
+    {
+      "sample_id": "T0500-10",
+      "slot": 10,
+      "tokens": 519,
+      "band": "medium",
+      "per_question": {
+        "类别": 519,
+        "程度": 510,
+        "事实": 504
+      }
+    }
+  ]
+}

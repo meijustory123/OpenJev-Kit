@@ -9,6 +9,7 @@ from pathlib import Path
 
 from openjev.data import catalog, read_jsonl, validate_shards
 from openjev.protocol import build_response, compact, parse_request
+from openjev.generation_lengths import length_band, summarize_lengths
 
 
 def text_values(value):
@@ -120,7 +121,7 @@ def main():
                 longest = max(longest, max(map(len, encoded["input_ids"])))
         if tokenizer is not None:
             lengths.append(longest)
-            label = "short" if longest <= 1024 else "medium" if longest <= 4096 else "long"
+            label = length_band(longest)
             domain[label] += 1
             group[label] += 1
             token_totals[label] += request_tokens
@@ -140,12 +141,6 @@ def main():
             for key in ["array_states", "structured_instructions", "structured_candidate_descriptions", "mixed_uncertain_noul"]:
                 if counts[key] < 5:
                     alerts.append({"group": int(group), "kind": "group_coverage_gap", "metric": key, "actual": counts[key]})
-    if tokenizer is not None:
-        for domain, counts in domains.items():
-            if counts["requests"] == 100:
-                for key in ["medium", "long"]:
-                    if counts[key] < 1:
-                        alerts.append({"domain": domain, "kind": "domain_length_coverage_gap", "metric": key})
     report = {
         "generated_at": datetime.now().astimezone().isoformat(),
         "complete": len(paths) == 500, "shards": len(paths), "requests": len(rows),
@@ -159,6 +154,8 @@ def main():
         "candidate_tokens_by_request_length_band": dict(token_totals),
         "total_candidate_input_tokens": sum(token_totals.values()) if lengths else None,
         "input_limit": maximum, "alerts_for_semantic_review": alerts,
+        "generation_length_policy": summarize_lengths({r['sample_id']: r['max_candidate_tokens']
+                                                       for r in length_rows}) if tokenizer is not None else None,
         "draft_consistency": dict(draft_checks),
         "topic_catalog_sha256": hashlib.sha256(Path('data/topics.jsonl').read_bytes()).hexdigest(),
         "source_files": source_files,

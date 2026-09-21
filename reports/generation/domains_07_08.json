@@ -1,0 +1,139 @@
+{
+  "worker": "domains_07_08",
+  "batch": 4,
+  "topic_range": [
+    "T0061",
+    "T0080"
+  ],
+  "domains": [
+    "汽车售后",
+    "物业社区"
+  ],
+  "status": "complete",
+  "authoring_source": "data/authoring/domains_07_08.py",
+  "counts": {
+    "topics": 20,
+    "requests": 200,
+    "questions": 240,
+    "question_types": {
+      "choice": 100,
+      "score": 80,
+      "noul": 60
+    }
+  },
+  "validation": {
+    "validate_shards": "passed",
+    "validate_shards_detail": "validate_shards(20 个分片) 返回 200 行 / 240 个问题",
+    "draft_lengths_enforce_mix": "passed",
+    "preflight_data_enforce_mix": "passed",
+    "preflight_nonconforming_topics": [],
+    "audit_generation_alerts_in_this_batch": [],
+    "max_tokens": 891,
+    "short_range_observed": "174—244 token",
+    "medium_range_observed": "623—891 token",
+    "medium_slots": {
+      "T0061": "04",
+      "T0062": "01",
+      "T0063": "06",
+      "T0064": "09",
+      "T0065": "03",
+      "T0066": "10",
+      "T0067": "02",
+      "T0068": "07",
+      "T0069": "05",
+      "T0070": "08",
+      "T0071": "01",
+      "T0072": "04",
+      "T0073": "03",
+      "T0074": "06",
+      "T0075": "09",
+      "T0076": "10",
+      "T0077": "02",
+      "T0078": "07",
+      "T0079": "05",
+      "T0080": "08"
+    },
+    "measurement_artifact": "reports/generation/new-length-policy-check.json"
+  },
+  "structured_coverage": {
+    "array_states": 100,
+    "structured_instructions": 55,
+    "structured_candidate_descriptions": 270,
+    "array_state_topics": [
+      "T0061",
+      "T0063",
+      "T0066",
+      "T0068",
+      "T0071",
+      "T0072",
+      "T0074",
+      "T0076",
+      "T0077",
+      "T0080"
+    ],
+    "note": "数组 state 覆盖 10 题（每题 10 条共 100 条）；结构化 instructions 覆盖 11 题；结构化候选描述覆盖 12 题。"
+  },
+  "semantic_review": {
+    "fully_reviewed": [
+      "T0062",
+      "T0065",
+      "T0069",
+      "T0072",
+      "T0074",
+      "T0079"
+    ],
+    "boundary_checked": [
+      "T0061",
+      "T0063",
+      "T0064",
+      "T0066",
+      "T0067",
+      "T0068",
+      "T0070",
+      "T0071",
+      "T0073",
+      "T0075",
+      "T0076",
+      "T0077",
+      "T0078",
+      "T0080"
+    ],
+    "slots_covered_by_full_review": [
+      "03",
+      "04",
+      "05",
+      "06",
+      "09",
+      "10"
+    ],
+    "method": "逐题核对 state 与 instructions 能否唯一支持标签、候选项是否互斥、明确否定与未提及是否区分、概率是否与证据强弱一致、十条是否只是换名字、请求是否夹带答案或命题编号；并逐条读取 20 个中档样本全文。",
+    "findings": [
+      "20 题原本没有任何中档样本，全部 200 条都落在短档（最长 244 token）；已为每题补一条 513—1024 token 的自然长样本，槽位在题内轮换，十个槽位各出现两次。",
+      "Choice 概率过于固定：峰值只随槽位在 0.93/0.95/0.96/0.97 之间变化，非目标项一律等权。已改为按 (命题号+槽位) 在 8 个峰值间轮换。",
+      "槽位 02（易混类别）的相邻易混项与非易混项同权，概率未体现混淆关系。已为每题槽位 02 指定可解释的相邻类别并把其概率抬到 0.033—0.066，其余干扰项保持低值。",
+      "Score 三档原来各只有一个固定向量（共 3 个）。已改为按 (命题号+槽位) 在三个向量组之间轮换，得到 9 个不同的分布。",
+      "结构化覆盖只到批次下限：数组 state 6 条、结构化 instructions 5 条、结构化候选描述 5 条，且 T0076—T0080 对第 4 组贡献为 0。已扩展到数组 state 10 题、结构化 instructions 11 题、结构化候选描述 12 题。",
+      "T0074 中档 state 的工作单标题写作“【占位争议受理记录”，与审计脚本检测占位符的正则（【占位）撞车，触发 placeholder_or_answer_leak_marker 告警；已改为“【车位被占争议受理记录”。",
+      "T0078 中档把持续时长写成 43 分钟，review.evidence 仍写 18 分钟；已同步改为 43 分钟。",
+      "T0069、T0079 的中档 evidence 提到原文并未出现的“紧张”，与改写后的 state 不再对应；已改写为与 state 一致的依据。",
+      "逐题复核槽位 03 确认均真正缺失决定性信息（并因此高概率选择“资料不足/待补/待核实/信息不足/意图不明/对象待明确”类别），槽位 09 均有直接反证而非“没提到”。",
+      "所有 20 题的槽位 10 Noul 中，有 10 条判断尚未知事实并使用约 0.5，覆盖“证据不足”场景，满足每 5 题至少 1 条。"
+    ],
+    "corrected_before_delivery": [
+      "T0069：重写槽位 05 中档 evidence（分片已备份为 data/shards/T0069.jsonl.before_fix 后重新发布）。",
+      "T0074：重写槽位 06 中档工作单标题，消除占位符正则误报（分片已备份为 data/shards/T0074.jsonl.before_fix 后重新发布）。",
+      "T0079：重写槽位 05 中档 evidence（分片已备份为 data/shards/T0079.jsonl.before_fix 后重新发布）。",
+      "批次内统一修正：中档补样、Choice 峰值轮换、易混项概率抬升、Score 向量轮换、结构化覆盖扩展。"
+    ]
+  },
+  "limitations": [
+    "全部标签为 agent_synthetic 软标签：本批未调用任何教师服务或人工标注，概率只代表标注偏好与不确定性，未经真实业务频率校准，不得当作已校准概率或真实业务准确率。",
+    "本报告只覆盖本 subagent 负责的 20 个命题 T0061—T0080（200 条请求、240 个问题）；不覆盖其他批次，也不构成对全量 500 题的结论。",
+    "自动校验通过（validate_shards、draft_lengths --enforce-mix、preflight_data --topics ... --enforce-mix、audit_generation 本批无告警）只说明结构、长度、概率和精确重复等机械约束合格，不等于语义全部正确；语义结论来自人工复核，覆盖范围见 semantic_review。",
+    "T0076—T0080 划分在第 4 组、T0061—T0075 划分在第 3 组；第 4 组覆盖指标同时受 T0081—T0100 影响，本批只能保证自己 5 题的贡献。",
+    "audit_generation 在全库层面仍报告第 3 组有 2 条超过 1,024 token 的样本，来自其他批次的命题，不在本批 20 题范围内。",
+    "场景、阈值与规则全部虚构，并已写入 state/instructions；不代表任何真实门店或物业的政策、法规或专业结论。",
+    "本批未做跨批次语义近似查重（由主 agent 负责）；同一批次内的精确重复与“仅数字不同”的近似状态已由校验脚本和审计脚本检查。",
+    "reports/generation/new-length-policy-check.json 已由 scripts/draft_lengths --json 重新生成为本批的实测记录；该文件此前是中断运行的临时产物，未被任何文档或脚本引用。"
+  ]
+}

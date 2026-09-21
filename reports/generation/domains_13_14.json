@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-09-21T18:20:00+08:00",
+  "worker": "domains_13_14",
+  "batch": 7,
+  "topic_range": ["T0121", "T0140"],
+  "domains": ["渔业水产", "食品加工"],
+  "scope": "T0121—T0140；渔业水产与食品加工各10题。仅覆盖本批，不含其他批次。",
+  "status": "complete",
+  "label_source": "agent_synthetic",
+  "authoring_source": "data/authoring/domains_13_14.py",
+  "counts": {
+    "topics": 20,
+    "requests": 200,
+    "questions": 240,
+    "shards": 20,
+    "question_types": {"choice": 100, "score": 80, "noul": 60},
+    "splits": {"train": 160, "validation": 20, "test": 20}
+  },
+  "validation": {
+    "validate_shards": "passed（20 个分片、200 条，返回 200）",
+    "draft_lengths_enforce_mix": "passed（200 条草稿实测：short=180、medium=20、over_generation_limit=0；nonconforming_topics 为空；退出码 0）",
+    "preflight_data_topics_enforce_mix": "passed（questions=240, candidate_inputs=903, configured_max_length=8192, max_tokens=668, p95=591；每题 9 短 1 中）",
+    "max_tokens": 668,
+    "min_medium_tokens": 518,
+    "medium_slots": {
+      "T0121": "03（648 token）", "T0122": "07（643 token）", "T0123": "10（603 token）",
+      "T0124": "05（668 token）", "T0125": "02（586 token）", "T0126": "08（544 token）",
+      "T0127": "01（561 token）", "T0128": "06（568 token）", "T0129": "09（623 token）",
+      "T0130": "04（604 token）", "T0131": "07（667 token）", "T0132": "03（642 token）",
+      "T0133": "10（600 token）", "T0134": "05（574 token）", "T0135": "08（591 token）",
+      "T0136": "02（549 token）", "T0137": "06（576 token）", "T0138": "01（557 token）",
+      "T0139": "09（518 token）", "T0140": "04（633 token）"
+    }
+  },
+  "structured_coverage": {
+    "array_states": 6,
+    "structured_instructions": 20,
+    "structured_candidate_descriptions": 5,
+    "note": "数组 state 覆盖 T0124-05、T0126-01、T0128-03、T0135-03、T0138-10、T0140-10 等；结构化 instructions 以「任务／排除」「对象／范围」「规则／记录」对象形式出现；结构化候选描述为 Choice 的 criteria 取值写成含「定义／判断要点」的对象（如 T0127 的维护优先级、T0132 的三种报警类别）。"
+  },
+  "probability_diversity": {
+    "choice_questions": 100,
+    "distinct_choice_vectors": 90,
+    "max_identical_vector_repeat": 3,
+    "top_answer_option_index": {"0": 38, "1": 27, "2": 10, "3": 7, "4": 17, "5": 1},
+    "note": "首选项获胜（>0.5 且为首项）为 38/100，非「一律首项获胜」；无固定向量，最多重复 3 次。"
+  },
+  "semantic_review": {
+    "fully_reviewed": ["T0121", "T0125", "T0133", "T0139"],
+    "fully_reviewed_slots_covered": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"],
+    "boundary_checked": ["T0122", "T0123", "T0124", "T0126", "T0127", "T0128", "T0129", "T0130",
+                         "T0131", "T0132", "T0134", "T0135", "T0136", "T0137", "T0138", "T0140"],
+    "boundary_rule": "其余 16 题逐题检查槽位 03（缺决定性信息）与槽位 09（有直接反证、非「没提到」）两个边界样本。",
+    "findings": [
+      "T0123-02 的 Choice 概率打在第 4 项「双重异常」上，与依据文字「只算投饵量偏差」矛盾：偏差 14.7% 超过 10%，但剩余 22 公斤只占投喂量 12.8%，未超过 20%。已改为「投饵量偏差」。",
+      "T0121-10、T0123-05、T0123-07、T0126-06、T0129-06、T0131-06、T0133-07 的 Score 概率被打到错误等级，派生 score 与 review.evidence 描述的等级不一致（例如 T0123-05 偏差 4.5% 应为最低级，实际被打到「超过10%不超过20%」）。已逐条按依据改正。",
+      "T0125、T0128、T0134、T0138、T0139、T0140 的槽位 05/06/07 未按「低／中间或边界／高」升序排列（部分题目恰好相反）。已重排：槽位 05 取最低等级、06 取中间或边界等级、07 取最高等级，并重写相应 state 与依据，使场景与等级一致。",
+      "T0134 的严重度等级 1 原文为「轻微：外观缺陷但密封合格」，无法涵盖本例的封口温度偏离（封口温度属工艺参数而非外观）。已改为「轻微：密封测试合格但存在外观或工艺偏差」，并把 T0134-10 的标签从等级 0 改到等级 1。",
+      "T0125-08、T0138-08、T0138-09、T0140-08、T0140-09 的 Noul 命题极性与事实相反：命题为「是否存在断点／是否出现偏离」时，事实是「无断点／无偏离」却给出 noul≈0.97。已把命题改写为正向原子命题（「记录是否齐备且批号一致」「是否全程落在给定区间内」等），使槽位 08 肯定、槽位 09 否定各自都有直接证据。",
+      "11 条 Choice 共用同一概率向量 [.955,.015,.015,.01,.005]，属固定向量模式。已逐条改成数值相近但互不相同的分布（现最大重复 3 次，100 条中有 90 个不同向量）。",
+      "T0125-01、T0125-02 提到「暂养时长不足两小时」，但原 state 未写明两小时这一本场规定，依赖了外部猜测。已把「暂养时长不少于两小时」写入 state，并明确该规定不属本题判断范围。"
+    ],
+    "corrected_before_delivery": [
+      "先改 data/authoring/domains_13_14.py，重新生成草稿并重测长度，再重新发布分片。",
+      "已有分片覆盖前先备份：data/shards 下留有 12 个 T0121/T0123/T0125/T0126/T0128/T0129/T0131/T0133/T0134/T0138/T0139/T0140 的 *.jsonl.before_semantic_fix。",
+      "改正后重新通过 validate_shards（200 条）与 preflight_data --enforce-mix（240 问、max_tokens=668、nonconforming_topics 为空）。"
+    ],
+    "self_checks": [
+      "所有 Choice 概率和为 1，Score 概率和为 1，Noul 单值在 [0,1]，无负数、NaN、伪精确小数。",
+      "对比分片请求文本，未出现命题编号（T012x）、review、evidence、case_type、label_source 或「答案／应选／概率」等泄漏字样。",
+      "分片内 200 条 state 两两不相同；同一 state 未跨 split 出现。",
+      "槽位 10 每题恰好 1 Choice + 1 Score + 1 Noul，且 20 题的槽位 10 Noul 均为未知事实（0.5），远超「每 5 题至少 1 条」的要求。",
+      "所有判定所需规则（检验界线、时限、温控区间、批次衔接、缺陷判据、放行清单、分级规则等）均写在 state 或 instructions 中，未依赖现实法规或行业标准。"
+    ],
+    "residual_risk": "槽位 03 的「信息不足」与槽位 09 的「明确否定」依赖 state 自带的判据；若换用外部规则或补充事实，个别软标签的分布可能需要重估。槽位 07 在四等级量表上取最高等级（如 T0128 的「不合格」、T0139 的「不合格」），与题面「较高等级」一致，但与「中间偏高」的量表读法可能不同。"
+  },
+  "limitations": [
+    "标签为 agent_synthetic 软标签：概率体现标注偏好与不确定性，未由真实业务频率或真实渔业水产、食品加工数据校准，不能当作校准概率或真实业务准确率。",
+    "本报告只覆盖本 subagent 负责的 T0121—T0140 共 20 题、200 条请求、240 个问题；不代表其他批次或其他领域。",
+    "自动校验（validate_shards、draft_lengths --enforce-mix、preflight_data --enforce-mix）通过只说明结构、槽位、概率和长度合格，不等于语义全部正确。",
+    "语义复核为完整复核 4 题（T0121、T0125、T0133、T0139，覆盖槽位 01—10）加其余 16 题各检查槽位 03/09 边界样本，未逐条复核全部 200 条；审阅者与作者为同一 agent，不是独立复核。",
+    "所有场景、单位、批号、检测值与判据均为虚构，只用于训练候选匹配；不对应任何真实企业、真实批次或真实检验结论。",
+    "每题仅一条中档样本，槽位 10 的三问题请求长度预算最紧（T0123-10 实测 603 token、T0133-10 实测 600 token）；全部样本 ≤668 token，未生成超过 1,024 token 的样本。",
+    "本次未调用任何外部模型或 Jev 教师服务，未运行 scripts/train.py 或任何模型训练；未修改 openjev/、scripts/、data/topics.jsonl、configs/ 或其他批次的数据。"
+  ]
+}

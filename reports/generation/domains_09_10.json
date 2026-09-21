@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-09-21T14:40:00+08:00",
+  "worker": "domains_09_10",
+  "batch": 5,
+  "topic_range": ["T0081", "T0100"],
+  "domains": ["智能家居", "家庭事务"],
+  "scope": "T0081—T0100；智能家居与家庭事务各10题。仅覆盖本批，不含其他批次。",
+  "status": "complete",
+  "label_source": "agent_synthetic",
+  "counts": {
+    "topics": 20,
+    "requests": 200,
+    "questions": 240,
+    "shards": 20,
+    "question_types": {"choice": 100, "score": 80, "noul": 60},
+    "splits": {"train": 160, "validation": 20, "test": 20}
+  },
+  "validation": {
+    "validate_shards": "passed（20 个分片、200 条；返回 200）",
+    "draft_lengths_enforce_mix": "passed（草稿与分片均实测，nonconforming_topics 为空）",
+    "preflight_data_topics_enforce_mix": "passed（questions=240, candidate_inputs=882, max_tokens=768, p95=625）",
+    "max_tokens": 768,
+    "length_policy": "每题恰好 9 条短（≤512 token）、1 条中（513—1,024 token），无超限样本",
+    "medium_slots": {
+      "T0081": "01", "T0082": "02", "T0083": "03", "T0084": "04", "T0085": "05",
+      "T0086": "06", "T0087": "07", "T0088": "08", "T0089": "09", "T0090": "10",
+      "T0091": "01", "T0092": "02", "T0093": "03", "T0094": "04", "T0095": "05",
+      "T0096": "06", "T0097": "07", "T0098": "08", "T0099": "09", "T0100": "10"
+    },
+    "medium_slot_tokens": {
+      "T0081": 629, "T0082": 623, "T0083": 596, "T0084": 732, "T0085": 623,
+      "T0086": 520, "T0087": 529, "T0088": 581, "T0089": 618, "T0090": 743,
+      "T0091": 572, "T0092": 551, "T0093": 611, "T0094": 707, "T0095": 593,
+      "T0096": 674, "T0097": 656, "T0098": 768, "T0099": 592, "T0100": 633
+    },
+    "existing_shards_at_start": [],
+    "draft_shard_consistency": "published shards exactly reconstruct from drafts via finalize_shard",
+    "tokenizer": "本地 Qwen3.5-0.8B；完整候选输入（任务前后缀+JSON结构+state+问题说明+单个候选描述），未截断",
+    "external_model_api_calls": 0,
+    "training_started": false
+  },
+  "authoring_source": {
+    "file": "data/authoring/domains_09_10.py",
+    "note": "沿用被中断创作源已有的 row(...)/c(...)/s(...)/n(...) 事实内容，未推倒重写；本次补写发布逻辑（write_draft/save，写完草稿后逐题调用 finalize_shard）与每题一条中档样本（MEDIUM 表 + apply_medium）。",
+    "medium_state_style": "多轮家庭对话、家庭消息记录或规则与记录组合，非机械填充；中档槽位在题内 01—10 各轮换两次"
+  },
+  "structured_coverage": {
+    "array_states": 7,
+    "structured_instructions": 13,
+    "structured_candidate_descriptions": 61,
+    "mixed_uncertain_noul": 13,
+    "note": "四项均高于每批至少 5 条的要求；array_states 只统计顶层为数组的 state"
+  },
+  "probability_diversity": {
+    "distinct_choice_vectors": 93,
+    "distinct_score_vectors": 21,
+    "choice_winner_positions_zero_based": {"0": 22, "1": 24, "2": 20, "3": 18, "4": 9, "5": 5, "6": 2},
+    "note": "不存在 Choice 一律首项获胜或全批固定向量的情况"
+  },
+  "semantic_review": {
+    "method": "作者逐条复核，依据 state 与问题内自带规则；不是独立外部模型审阅。",
+    "fully_reviewed": ["T0086", "T0088", "T0090", "T0093", "T0099"],
+    "fully_reviewed_slots_covered": ["03", "04", "06", "09", "10"],
+    "boundary_checked": ["T0081", "T0082", "T0083", "T0084", "T0085", "T0087", "T0089", "T0091", "T0092", "T0094", "T0095", "T0096", "T0097", "T0098", "T0100"],
+    "boundary_scope": "上列每题各复核槽位 03（是否真正缺决定性信息）与槽位 09（是否有直接反证，而非单纯未提及）。",
+    "checks_performed": [
+      "只凭 state 与 instructions 能否支持标签；是否依赖未给出的法规或领域刻板印象",
+      "Choice 候选是否互斥、层级包含关系是否写明优先级或排除条件",
+      "明确否定与未提及是否区分；转述、引用他人诉求与已撤回诉求是否被误当作有效",
+      "概率强弱是否与证据一致、和为 1；Score 各档是否单一有序且边界不重叠",
+      "十条是否只是换名字或换金额；state 是否夹带答案、review、命题编号或占位标记",
+      "情感题：说话者、对象、时间段是否明确；中性/混合/不足是否分开",
+      "意图题：咨询、计划、执行、否定、取消、改口是否区分；最近一次有效诉求是否唯一"
+    ],
+    "findings": [
+      "T0086 槽位06 原为“两分钟边界、集中最高档”，与中档样本需要五分钟读数（中间级）不符，标签与状态会相互矛盾。",
+      "T0083 槽位03 原说明写“仅判断这句话”，扩写为整段家庭对话后指向不明。",
+      "T0084 中档样本角色写作“住户”，而问题说明与全题用“屋主”。",
+      "T0094 中档样本原文用“周六”，而问题说明是“只比较今天仍有效的任务”。",
+      "T0098 槽位08 原中档扩写只提“答辩通过”，与“是否祝贺收件人毕业”不完全对应。",
+      "T0088 槽位08 中档样本角色为“住户”，而该题原说明写“屋主”。",
+      "被中断的创作源只有事实内容，没有写草稿与调用 finalize_shard 的发布逻辑，且 200 条全部为短样本（最长 152 token），没有任何中档样本。"
+    ],
+    "corrected_before_delivery": [
+      "T0086 槽位06 改写为读数五分钟的中间级案例，标签改为 {0:0.01,1:0.97,2:0.02}，并同步更新该行上方注释。",
+      "T0083 槽位03 的问题说明改为结构化说明（对象=这段家庭对话中住户对卧室主灯的表达；任务=仅判断亮度偏好，不据光感不适推断方向）。",
+      "T0084 中档样本中 12 处“住户”改为“屋主”。",
+      "T0094 中档样本的“周六/周五”改为“今天/昨晚、今早”，与说明一致。",
+      "T0098 中档样本改为明确“祝你顺利毕业，答辩也一次通过”。",
+      "T0088 槽位08 说明改为“住户是否撤回了……”，与样本角色一致。",
+      "补齐发布逻辑，并为 20 题各补一条中档样本（槽位 01—10 各两次）。"
+    ],
+    "shard_backups": "以上修正全部发生在首次发布之前，因此本批没有需要备份覆盖的已发布分片；data/shards 下不存在 T0081—T0100 的 .before_fix 文件。",
+    "residual_risk": "槽位 03 的“信息不足”与槽位 09 的“明确否定”依赖 state 中自带的判据；若换用外部规则或补充事实，个别软标签的分布可能需要重估。"
+  },
+  "limitations": [
+    "标签为 agent_synthetic 软标签：概率体现标注偏好与不确定性，未由真实业务频率或真实用户数据校准，不能当作校准概率或真实业务准确率。",
+    "本报告只覆盖本 subagent 负责的 T0081—T0100 共 20 题、200 条请求、240 个问题；不代表其他批次或其他领域。",
+    "自动校验（validate_shards、draft_lengths --enforce-mix、preflight_data --enforce-mix）通过只说明结构、槽位、概率和长度合格，不等于语义全部正确。",
+    "语义复核为完整复核 5 题（T0086、T0088、T0090、T0093、T0099）加其余 15 题各检查槽位 03/09 边界样本，未逐条复核全部 200 条；审阅者与作者为同一 agent，不是独立复核。",
+    "T0089、T0090、T0099、T0100 为情感分类/意图识别专项，按 docs/1 的专项规范构造，未使用真实对话语料校准情感强度或意图分布。",
+    "每题仅一条中档样本，槽位 10 的三问题请求长度预算最紧（实测 633—743 token）；全部样本均 ≤768 token，未生成超过 1,024 token 的样本。",
+    "本次未调用任何外部模型或 Jev 教师服务，未运行 scripts/train.py 或任何模型训练。"
+  ]
+}

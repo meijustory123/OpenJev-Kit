@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-09-21T18:30:00+08:00",
+  "worker": "domains_15_16",
+  "batch": 8,
+  "topic_range": ["T0141", "T0160"],
+  "domains": ["工业制造", "建筑施工"],
+  "scope": "T0141—T0160；工业制造与建筑施工各 10 题。本报告只覆盖这 20 题，不含其他批次。",
+  "status": "complete",
+  "label_source": "agent_synthetic",
+  "counts": {
+    "topics": 20,
+    "shards": 20,
+    "requests": 200,
+    "questions": 240,
+    "question_types": {"choice": 100, "score": 80, "noul": 60},
+    "splits": {"train": 160, "validation": 20, "test": 20}
+  },
+  "validation": {
+    "validate_shards": "passed（20 个分片、200 条；返回 200）",
+    "draft_lengths_enforce_mix": "passed（草稿与分片均实测，nonconforming_topics 为空）",
+    "preflight_data_topics_enforce_mix": "passed（questions=240, candidate_inputs=910, max_tokens=739, p95=562）",
+    "max_tokens": 739,
+    "length_policy": "每题恰好 9 条短（≤512 token）、1 条中（513—1,024 token），无超限样本",
+    "medium_slots": {
+      "T0141": "01", "T0142": "02", "T0143": "03", "T0144": "04", "T0145": "05",
+      "T0146": "06", "T0147": "07", "T0148": "08", "T0149": "09", "T0150": "10",
+      "T0151": "01", "T0152": "02", "T0153": "03", "T0154": "04", "T0155": "05",
+      "T0156": "06", "T0157": "07", "T0158": "08", "T0159": "09", "T0160": "10"
+    },
+    "medium_slot_tokens": {
+      "T0141": 739, "T0142": 551, "T0143": 540, "T0144": 556, "T0145": 555,
+      "T0146": 554, "T0147": 523, "T0148": 548, "T0149": 581, "T0150": 576,
+      "T0151": 575, "T0152": 580, "T0153": 598, "T0154": 620, "T0155": 603,
+      "T0156": 540, "T0157": 563, "T0158": 567, "T0159": 574, "T0160": 527
+    },
+    "medium_state_style": "多轮班组沟通、检验/验收流转记录、规则与台账组合；非机械填充",
+    "tokenizer": "本地 Qwen3.5-0.8B；完整候选输入（任务前后缀+JSON 结构+state+问题说明+单个候选描述），未截断",
+    "draft_shard_consistency": "20/20 分片可由草稿经 finalize_shard 精确重建",
+    "external_model_api_calls": 0,
+    "training_started": false,
+    "existing_shards_at_start": []
+  },
+  "authoring_source": {
+    "file": "data/authoring/domains_15_16.py",
+    "note": "本批从零新建创作源。内容为手写事实场景；脚本只做序列化、草稿写出与逐题发布，不生成任何事实或标签。",
+    "reference": "沿用已验收创作源 data/authoring/domains_09_10.py 的 row/c/s/n 与发布逻辑写法"
+  },
+  "structured_coverage": {
+    "array_states": 16,
+    "structured_instructions": 18,
+    "structured_candidate_descriptions": 550,
+    "mixed_uncertain_noul": 20,
+    "note": "四项均高于每批至少 5 条的要求；array_states 只统计顶层为数组的 state。20 个混合槽位的 Noul 均覆盖证据不足（约 0.5）。"
+  },
+  "probability_diversity": {
+    "distinct_choice_vectors": 86,
+    "distinct_score_vectors": 17,
+    "distinct_noul_values": 5,
+    "choice_winner_positions_zero_based": {"0": 28, "1": 18, "2": 19, "3": 12, "4": 13, "5": 10},
+    "note": "不存在 Choice 一律首项获胜或全批固定向量的情况；概率和均经校验为 1。"
+  },
+  "semantic_review": {
+    "fully_reviewed": ["T0142", "T0147", "T0153", "T0160"],
+    "fully_reviewed_slot_coverage": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"],
+    "boundary_checked": ["T0141", "T0143", "T0144", "T0145", "T0146", "T0148", "T0149", "T0150",
+                          "T0151", "T0152", "T0154", "T0155", "T0156", "T0157", "T0158", "T0159"],
+    "boundary_checked_slots": ["03", "09"],
+    "findings": [
+      "T0153 槽位 10：核查规则原只写“防护设施已到位”，未界定井道口防护门是否属于该三项，答案存在两解。已把“防护设施”限定为安全带、作业面水平安全网与临边栏杆，并写明井道口防护门由另一张检查表管理。",
+      "T0156 槽位 03 与 T0160 槽位 03：原状态虽以“记录缺失”起笔，但空白的栏位可从台账直接读出缺哪几项，实际应归“多项不满足/多项缺失”，原“信息不足”标签不成立。已重写为记录确实不可得（卷宗未回、台账受潮不可辨），并保留“三项/四项均无记录可核”的表述。",
+      "T0151 槽位 09：原日志条目含“现场排水沟巡视”，与“本条不属于安全记录”的否定结论存在张力。已改为纯气象与作业影响表述。",
+      "T0148 槽位 10：原 Choice 问“两个缺陷项分别由哪两个部门承接”，但候选为单一部门，题面与候选不匹配。已改为只问其中导电率一项的承接部门，另一缺陷留作干扰。",
+      "T0142 槽位 10 与 T0147 槽位 10：Score 依据文字与所选档位不一致（残留疑问句、档位误判）。已按公差带宽度与偏差重算并同步修正依据与概率。",
+      "全批 10 处 Choice 概率向量和为 1.005—1.01。已逐条修正为 1，并重新实测长度与全量校验。"
+    ],
+    "corrected_before_delivery": [
+      "data/shards/T0151.jsonl、T0153.jsonl、T0156.jsonl、T0160.jsonl 修复前均先备份为同名 .before_fix，重新发布并再次通过 validate_shards 与 preflight_data --enforce-mix 后删除备份。",
+      "其余修正为概率向量与依据文字调整，同样经草稿重写、重测长度与重新发布。"
+    ],
+    "unresolved": []
+  },
+  "limitations": [
+    "标签来源为 agent_synthetic 软标签，由本 subagent 依据自包含状态人工标注，并非真实业务频率或专家共识。",
+    "概率仅代表标注偏好与不确定性，未经任何真实业务数据校准，不得当作校准后的概率使用。",
+    "本报告只覆盖 T0141—T0160 共 20 题、200 条请求、240 个问题，不代表其他批次或全部 500 题。",
+    "自动校验（validate_shards、preflight_data --enforce-mix）只证明结构、槽位、题型、概率与长度合规，不等于语义全部正确。",
+    "语义复核为完全复核 4 题 + 其余 16 题各查 1 个边界样本（槽位 03 或 09），并非 200 条逐条独立复核。",
+    "场景中涉及的工时、阈值、时限、证照与验收规则均为题目内自包含的虚构规定，不对应也不代表任何现行法规或行业标准。"
+  ]
+}

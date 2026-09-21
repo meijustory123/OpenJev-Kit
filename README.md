@@ -21,4 +21,4 @@
 .\.venv\Scripts\python.exe -m scripts.train --config configs/train.json
 ```
 
-基础模型原目录只读；所有训练输出写入 `outputs/`。本轮正在生成正式 5,000 条数据，分工与进度记录在 `reports/generation/dispatch.json`，检查结果在 `reports/generation-audit.json`。完整模型训练尚未启动。
+基础模型原目录只读；所有训练输出写入 `outputs/`。数据生成已按用户要求暂停，已发布60题、600条请求。后续每题严格 **9短（≤512 token）1中（513—1,024 token）**，按请求最长完整候选输入统计。分工与暂停状态记录在 `reports/generation/dispatch.json`；历史数据检查保留在 `reports/generation-audit.json`。须等用户明确恢复，完整模型训练尚未启动。

@@ -1,6 +1,6 @@
 {
   "started_at": "2026-09-21T13:37:31.258530+08:00",
-  "maximum_active_subagents": 3,
+  "maximum_active_subagents": 5,
   "assignment_rule": "每个subagent两个领域，已完成后释放并发名额，再开启下一批",
   "assignments": [
     {
@@ -132,8 +132,12 @@
         "T0080"
       ],
       "expected_requests": 200,
-      "status": "running",
-      "started_at": "2026-09-21T14:03:25.608832+08:00"
+      "status": "complete",
+      "started_at": "2026-09-21T14:03:25.608832+08:00",
+      "paused_at": "2026-09-21T14:22:32.112384+08:00",
+      "resumed_at": "2026-09-21T14:25:27.646566+08:00",
+      "completed_at": "2026-09-21T14:36:40.296084+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 891, nonconforming=[]"
     },
     {
       "batch": 5,
@@ -165,8 +169,12 @@
         "T0100"
       ],
       "expected_requests": 200,
-      "status": "running",
-      "started_at": "2026-09-21T14:03:25.608832+08:00"
+      "status": "complete",
+      "started_at": "2026-09-21T14:03:25.608832+08:00",
+      "paused_at": "2026-09-21T14:22:32.112384+08:00",
+      "resumed_at": "2026-09-21T14:25:27.646566+08:00",
+      "completed_at": "2026-09-21T14:36:20.342958+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, nonconforming=[]"
     },
     {
       "batch": 6,
@@ -198,8 +206,12 @@
         "T0120"
       ],
       "expected_requests": 200,
-      "status": "running",
-      "started_at": "2026-09-21T14:07:20.951471+08:00"
+      "status": "complete",
+      "started_at": "2026-09-21T14:07:20.951471+08:00",
+      "paused_at": "2026-09-21T14:22:32.112384+08:00",
+      "resumed_at": "2026-09-21T14:25:27.646566+08:00",
+      "completed_at": "2026-09-21T14:39:10.071639+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 748, nonconforming=[]"
     },
     {
       "batch": 7,
@@ -231,7 +243,10 @@
         "T0140"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T14:36:20.342958+08:00",
+      "completed_at": "2026-09-21T14:52:00.501124+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 668, nonconforming=[]"
     },
     {
       "batch": 8,
@@ -263,7 +278,10 @@
         "T0160"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T14:36:40.296084+08:00",
+      "completed_at": "2026-09-21T14:53:17.402989+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 739, nonconforming=[]"
     },
     {
       "batch": 9,
@@ -295,7 +313,10 @@
         "T0180"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T14:39:10.071639+08:00",
+      "completed_at": "2026-09-21T14:50:37.507542+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 897, nonconforming=[]"
     },
     {
       "batch": 10,
@@ -327,7 +348,10 @@
         "T0200"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T14:50:37.507542+08:00",
+      "completed_at": "2026-09-21T14:59:53.666531+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 834, nonconforming=[]"
     },
     {
       "batch": 11,
@@ -359,7 +383,10 @@
         "T0220"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T14:52:00.501124+08:00",
+      "completed_at": "2026-09-21T15:05:45.333352+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 762, nonconforming=[]"
     },
     {
       "batch": 12,
@@ -391,7 +418,10 @@
         "T0240"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T14:53:17.402989+08:00",
+      "completed_at": "2026-09-21T15:09:48.576819+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 821, nonconforming=[]"
     },
     {
       "batch": 13,
@@ -423,7 +453,10 @@
         "T0260"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T14:59:53.666531+08:00",
+      "completed_at": "2026-09-21T15:14:35.786411+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 716, nonconforming=[]"
     },
     {
       "batch": 14,
@@ -455,7 +488,10 @@
         "T0280"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:05:45.333352+08:00",
+      "completed_at": "2026-09-21T15:21:29.480045+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 814, nonconforming=[]"
     },
     {
       "batch": 15,
@@ -487,7 +523,10 @@
         "T0300"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:09:48.576819+08:00",
+      "completed_at": "2026-09-21T15:21:02.875389+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 720, nonconforming=[]"
     },
     {
       "batch": 16,
@@ -519,7 +558,10 @@
         "T0320"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:14:35.786411+08:00",
+      "completed_at": "2026-09-21T15:35:03.757783+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 821, nonconforming=[]"
     },
     {
       "batch": 17,
@@ -551,7 +593,10 @@
         "T0340"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:21:02.875389+08:00",
+      "completed_at": "2026-09-21T15:36:01.117765+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 860, nonconforming=[]"
     },
     {
       "batch": 18,
@@ -583,7 +628,10 @@
         "T0360"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:21:29.480045+08:00",
+      "completed_at": "2026-09-21T15:35:03.757783+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 672, nonconforming=[]"
     },
     {
       "batch": 19,
@@ -615,7 +663,10 @@
         "T0380"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:35:03.757783+08:00",
+      "completed_at": "2026-09-21T15:48:08.058294+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 673, nonconforming=[]"
     },
     {
       "batch": 20,
@@ -647,7 +698,10 @@
         "T0400"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:35:03.757783+08:00",
+      "completed_at": "2026-09-21T15:49:35.083480+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 793, nonconforming=[]"
     },
     {
       "batch": 21,
@@ -679,7 +733,10 @@
         "T0420"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:36:01.117765+08:00",
+      "completed_at": "2026-09-21T15:54:54.220507+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 709, nonconforming=[]"
     },
     {
       "batch": 22,
@@ -711,7 +768,10 @@
         "T0440"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:36:52.489087+08:00",
+      "completed_at": "2026-09-21T15:53:07.308389+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 645, nonconforming=[]"
     },
     {
       "batch": 23,
@@ -743,7 +803,10 @@
         "T0460"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:36:52.489087+08:00",
+      "completed_at": "2026-09-21T15:51:41.744629+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 829, nonconforming=[]"
     },
     {
       "batch": 24,
@@ -775,7 +838,10 @@
         "T0480"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:48:08.058294+08:00",
+      "completed_at": "2026-09-21T16:01:43.771114+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 717, nonconforming=[]"
     },
     {
       "batch": 25,
@@ -807,7 +873,85 @@
         "T0500"
       ],
       "expected_requests": 200,
-      "status": "queued"
+      "status": "complete",
+      "started_at": "2026-09-21T15:49:35.083480+08:00",
+      "completed_at": "2026-09-21T16:02:14.614368+08:00",
+      "verified_by_main": "200 rows, 180 short/20 medium/0 over, max 702, nonconforming=[]"
     }
-  ]
+  ],
+  "generation_status": "complete",
+  "paused_at": "2026-09-21T14:22:32.112384+08:00",
+  "resume_requires": "已由用户明确恢复（2026-09-21）；恢复后按 docs/5、子代理生成指令.md 执行",
+  "length_policy": {
+    "short_max_tokens": 512,
+    "medium_min_tokens": 513,
+    "medium_max_tokens": 1024,
+    "per_topic": {
+      "short": 9,
+      "medium": 1
+    },
+    "measurement": "每请求最长完整候选输入",
+    "applies_to": "暂停后新生成和未发布的数据",
+    "existing_data_policy": "用户明确不修改已发布T0001—T0060共600条旧数据；新比例仅用于后续新数据"
+  },
+  "resumed_at": "2026-09-21T14:25:27.646566+08:00",
+  "concurrency_updated_at": "2026-09-21T15:36:52.489087+08:00",
+  "concurrency_note": "用户 2026-09-21 明确同意再多开两个 agent，并发上限由 3 提升到 5；每批仍为两个领域 20 题。",
+  "completed_at": "2026-09-21T16:02:14.614368+08:00",
+  "quality_fix_round": {
+    "date": "2026-09-21",
+    "trigger": "主 agent 全量审计：22 个命题存在仅数字不同的 state；3 处槽位10 noul 把「已确认为否」误标为「事实未知」",
+    "fix_agents": 5,
+    "topics_fixed": [
+      "T0166",
+      "T0169",
+      "T0174",
+      "T0181",
+      "T0182",
+      "T0185",
+      "T0187",
+      "T0190",
+      "T0193",
+      "T0194",
+      "T0195",
+      "T0197",
+      "T0198",
+      "T0290",
+      "T0340",
+      "T0357",
+      "T0360",
+      "T0431",
+      "T0468",
+      "T0469",
+      "T0472",
+      "T0475",
+      "T0476",
+      "T0485",
+      "T0500"
+    ],
+    "noul_relabels": {
+      "T0181-10": "0.5 -> 0.02",
+      "T0340-10": "0.46 -> 0.02",
+      "T0185-10": "问题改写为真正未知事实，保持 0.5"
+    },
+    "extra_fix": "T0185-10 Choice 标签与自身 evidence 矛盾（原 0.95 给「主管破裂」，evidence 写「支管渗漏」），已改为支管渗漏 0.94",
+    "reverified": "check_state_diversity 全库 500 分片 collisions={}；validate_data --require-all 通过；audit_generation --require-all --tokens 告警由 31 降至 4（余 4 条经复核为正确的未知事实样本）"
+  },
+  "final_verification": {
+    "date": "2026-09-21T16:12:02.929126+08:00",
+    "shards": 500,
+    "requests": 5000,
+    "questions": 6000,
+    "splits": {
+      "train": 4000,
+      "validation": 500,
+      "test": 500
+    },
+    "max_candidate_input_tokens": 5219,
+    "configured_max_length": 8192,
+    "length_policy_new_data": "T0061—T0500 全部恰好 9 短 + 1 中，0 条超限",
+    "length_policy_legacy": "T0001—T0060 为旧方案，保留未改，其中 12 条超 1024 token",
+    "draft_shard_consistency": "500/500 一致",
+    "cross_split_state_leak": "无"
+  }
 }

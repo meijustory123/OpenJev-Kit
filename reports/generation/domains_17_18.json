@@ -1,0 +1,111 @@
+{
+  "worker": "domains_17_18",
+  "topic_range": ["T0161", "T0180"],
+  "domains": ["电力能源", "环境保护"],
+  "status": "complete",
+  "counts": {
+    "topics": 20,
+    "requests": 200,
+    "questions": 240,
+    "question_types": {"choice": 100, "score": 80, "noul": 60}
+  },
+  "validation": {
+    "validate_shards": "passed (200 rows, 20 shards, 槽位 1—10 齐全)",
+    "draft_lengths_enforce_mix": "passed (180 short + 20 medium, nonconforming_topics=[])",
+    "preflight_data_enforce_mix": "passed (questions=240, candidate_inputs=820, short=180, medium=20, over_generation_limit=0, nonconforming_topics=[])",
+    "max_tokens": 897,
+    "p95_tokens": 648,
+    "medium_slots": {
+      "T0161": "03", "T0162": "06", "T0163": "08", "T0164": "01", "T0165": "04",
+      "T0166": "10", "T0167": "07", "T0168": "02", "T0169": "05", "T0170": "09",
+      "T0171": "03", "T0172": "06", "T0173": "08", "T0174": "01", "T0175": "04",
+      "T0176": "10", "T0177": "07", "T0178": "02", "T0179": "05", "T0180": "09"
+    },
+    "medium_tokens": {
+      "T0161": 897, "T0162": 778, "T0163": 651, "T0164": 704, "T0165": 773,
+      "T0166": 623, "T0167": 673, "T0168": 685, "T0169": 743, "T0170": 732,
+      "T0171": 595, "T0172": 710, "T0173": 659, "T0174": 596, "T0175": 605,
+      "T0176": 662, "T0177": 601, "T0178": 736, "T0179": 575, "T0180": 553
+    }
+  },
+  "structured_coverage": {
+    "array_states": 19,
+    "structured_instructions": 20,
+    "structured_candidate_descriptions": 40,
+    "note": "数组 state 为 19 条列表型 state（每题槽位04 等）；另有大量对象型 state，结构化 state 合计 170 条。结构化 instructions 为每题槽位04 的对象型说明；结构化候选描述为 8 道 Choice 题中包含条件/排除/优先级字段的选项描述，展开后 40 条。"
+  },
+  "semantic_review": {
+    "fully_reviewed": ["T0161", "T0165", "T0169", "T0173", "T0178"],
+    "boundary_checked": ["T0162", "T0163", "T0164", "T0166", "T0167", "T0168", "T0170", "T0171", "T0172", "T0174", "T0175", "T0176", "T0177", "T0179", "T0180"],
+    "findings": [
+      "T0173 槽位09 原否定依据偏弱：投诉原文含“水面颜色发暗”，仅凭投诉人“未观察水体”不足以构成直接反证。",
+      "T0165 槽位02 的 state 内部数值不一致：本月抄见写作 990，而同一条换表登记写新表本月读 670。",
+      "T0176/T0178/T0180 共 7 条 Choice 概率和分别为 1.005、1.01、1.015、0.99，未通过 label_vector 的和为 1 校验。",
+      "槽位10 的 Noul 原为 20/20 全部 0.5，形成固定取值模式，缺少“明确肯定/明确否定”对照。",
+      "结构化候选描述原为 0 条，未达到“每批至少 5 个”的要求（选项定义均为纯字符串）。",
+      "T0167 槽位07、T0169 槽位05、T0170 槽位09、T0172 槽位06、T0178 槽位02 中档长度仅 533—579 token，贴近 513 下界，余量偏小。",
+      "T0165 槽位04、T0173 槽位08、T0175 槽位04、T0176 槽位10、T0179 槽位05、T0180 槽位09 初测为短档（394—500 token），未满足 9 短 1 中。"
+    ],
+    "corrected_before_delivery": [
+      "T0173 槽位09：改写投诉原文为纯气味诉求，并新增“排口核查记录：当日无排水、指标在正常范围内、未发现漂浮物与死鱼”作为直接反证。",
+      "T0165 槽位02：把本月抄见改为 670（资产编号3300188），与换表登记的“新表本月读670”一致。",
+      "修正 T0176、T0178、T0180 共 7 处概率向量，使和为 1（T0176-10 类别、T0178-01/02/04/10、T0180-01/04）。",
+      "把 T0164、T0166、T0169、T0171、T0173、T0177、T0178、T0179 的槽位10 Noul 由未知事实改为由 state 直接支撑的明确判断，保留 12 条约 0.5 的未知事实（每组 5 题内均 ≥3 条）。",
+      "为 T0161、T0164、T0167、T0168、T0172、T0176、T0177、T0180 的关键选项补写含“条件/排除/优先级”的结构化候选描述，共 40 条。",
+      "扩写 T0167-07、T0169-05、T0170-09、T0172-06、T0178-02 的中档沟通记录，使中档 token 提升到 673—743。",
+      "扩写 T0165-04、T0173-08、T0175-04、T0176-10、T0179-05、T0180-09 的中档 state，使其由短档进入 513—1024 区间（最终 553—773）。"
+    ],
+    "corrections_note": "所有已发布后被修改的 10 个分片（T0161、T0164、T0165、T0166、T0167、T0168、T0169、T0171、T0172、T0173、T0176、T0177、T0178、T0179、T0180 中被改动的部分）均在覆盖前另存备份：data/shards/Txxxx.jsonl.before_fix（或 .before_fix2），修改后重新运行 finalize_shard 并通过全量校验。"
+  },
+  "reproduce": {
+    "authoring_source": "data/authoring/domains_17_18.py",
+    "publish": ".venv\\Scripts\\python.exe data/authoring/domains_17_18.py（或对单题调用 m.save(topic)；drafts 子命令只写草稿）",
+    "length_check": ".venv\\Scripts\\python.exe -m scripts.draft_lengths data/drafts/T0161.jsonl ... --enforce-mix"
+  },
+  "limitations": [
+    "全部标签为 agent_synthetic 软标签，由 agent 依据自包含的虚构 state 手工标注，未调用 Jev 教师服务。",
+    "概率仅代表标注偏好与不确定性，未由任何真实业务频率校准，不能解释为真实场景下的准确率或置信度。",
+    "本报告只覆盖 domains_17_18（T0161—T0180）共 20 个命题、200 条请求、240 个问题；不代表其他批次，也不代表 500 题的全局质量。",
+    "自动校验（validate_shards、preflight_data --enforce-mix、draft_lengths --enforce-mix）通过只说明结构、长度与派生字段合格，不等于语义全部正确。",
+    "语义复核为人工逐条阅读：完整复核 5 个命题（T0161、T0165、T0169、T0173、T0178，覆盖槽位 03/04/06/09/10），其余 15 题各检查槽位 03 与 09 两个边界样本；未逐条复核的槽位（如部分槽位 05/07/08）仅由自动校验覆盖。",
+    "本批电力能源与环境保护的告警分级、限值、处置时限、采样与监测规则均为题内自设的虚构规范，写进 state 或 criteria，不对应也不可外推到现实法规或行业标准。",
+    "场景、机构、编号、人名与数值均为虚构，不指向真实站点、企业或个人。"
+  ],
+  "diversity_fix": {
+    "date": "2026-09-21",
+    "trigger": "全量审计与 scripts/check_state_diversity 发现：下列样本的 state 在把数字统一替换成 #、去掉空白之后完全相同，即只改了数值、模板与措辞一字未变，违反同一题十条须在事实组合、表达方式、任务边界、噪声中至少变化两项的要求。",
+    "scope": "仅 domains_17_18（T0161—T0180）中的 T0166、T0169、T0174 三个命题共 8 条样本；其余 17 题与其他批次未改动。",
+    "rewritten_samples": {
+      "T0166-05": {"tokens": 269, "changes": ["载体：两条字段摘要 → 营销系统需量台账结构化对象，逐时段登记三条15分钟滑动平均需量", "字段口径与来源：表计冻结值折算，明确非现场读数，粒度到15分钟时段", "加噪：附一条与分档无关的功率因数旁证记录", "任务边界：instructions 改为按台账逐时需量由其最高值比较阈值"], "state_shape": "dict"},
+      "T0166-06": {"tokens": 304, "changes": ["载体：两条字段摘要 → 工单处理沟通数组（6轮，含时刻/角色/内容）", "字段口径与来源：计量员核定的需量口径，并显式排除电费折算估算值920千瓦这一异口径来源", "加噪：一条已被排除的异口径数据与一条无错峰方案旁证", "任务边界：instructions 改为以计量员核定的需量为准"], "state_shape": "dict"},
+      "T0166-07": {"tokens": 208, "changes": ["载体：两条字段摘要 → 用能复核单（复核员转述现场抄见）", "字段口径与来源：原始登记与更正登记分离，注明原值已作废", "加噪：一条已作废的旧记录（790千瓦）与一条无关的无功电量旁证", "任务边界：instructions 改为以更正后生效的需量为准"], "state_shape": "dict"},
+      "T0169-06": {"tokens": 199, "changes": ["载体：两条字段摘要 → 计量采集系统导出的分项明细数组（含三条明细分项与本期电量）", "字段口径与来源：分项合计由明细相加、总量合计取自关口表结算值，两条来源分列", "加噪：一条与差值无关的报表编制人旁证", "任务边界：判定口径写入 state，明确0.5%至5%为中间一档"], "state_shape": "dict"},
+      "T0169-07": {"tokens": 194, "changes": ["载体：字段摘要 → 抄表员上报的叙述性文字（台账登记口吻）", "字段口径与来源：三条分项明细在行文中给出并需自行相加，总量为同表计总加有功电量", "加噪：一条同配电室备用表未投运的无关旁证", "任务边界：行文内写明允许舍入差±0.5%及最低一档的界限"], "state_shape": "str"},
+      "T0174-05": {"tokens": 188, "changes": ["载体：三条字段摘要 → 转运作业单（站内电子登记）字段对象", "字段口径与来源：显式区分调度计划表登记与作业单实际登记两个来源", "加噪：一条配载吨位与无临时加派的旁证", "任务边界：instructions 改为按作业单登记的两个时刻比较先后"], "state_shape": "dict"},
+      "T0174-06": {"tokens": 311, "changes": ["载体：三条字段摘要 → 核实沟通数组（6轮，含时刻/角色/内容）", "字段口径与来源：纠正把计划发车时刻10:00当作计划完成时刻的口径混淆，核定计划完成为10:15", "加噪：一条无报备但声明不影响时间比较的旁证", "任务边界：instructions 改为以记录员核定的两个时刻为准"], "state_shape": "dict"},
+      "T0174-07": {"tokens": 203, "changes": ["载体：三条字段摘要 → 值班记录叙述性文字", "字段口径与来源：地磅回传的实际完成时刻为准，区分计划完成时刻与滞留原因", "加噪：一条已被作废的预填值（14:40）", "任务边界：行文内写明容许延时30分钟自计划完成时刻起算及最高一档界限"], "state_shape": "str"}
+    },
+    "invariants_kept": {
+      "sample_id_topic_id_slot": "未改动（T0166-05/06/07、T0169-06/07、T0174-05/06/07）",
+      "case_type": "未改动，仍为槽位对应的低等级/中间或边界等级/高等级",
+      "labels": "逐条比对与修复前完全一致（Score 概率向量不变，正确答案仍唯一可判）",
+      "review_evidence": "同步改写并与新的 state 匹配，每个问题均不少于 8 字",
+      "length_band": "8 条改写样本全部仍为短档（188—311 token ≤ 512），未新增或移动中档样本",
+      "derived_fields": "未手工编写 response/legend/score/choice/usage，均由 scripts/finalize_shard 派生"
+    },
+    "commands": {
+      "check_state_diversity": {"command": ".venv\\Scripts\\python.exe -m scripts.check_state_diversity T0166 T0169 T0174", "result": "{\"checked_shards\": 3, \"collisions\": {}}，退出码 0"},
+      "validate_shards": {"command": ".venv\\Scripts\\python.exe -c \"...validate_shards([...T0166/T0169/T0174...])\"", "result": "30，退出码 0"},
+      "draft_lengths": {"command": ".venv\\Scripts\\python.exe -m scripts.draft_lengths data/drafts/T0166.jsonl data/drafts/T0169.jsonl data/drafts/T0174.jsonl --enforce-mix", "result": "requests={short:27, medium:3, over_generation_limit:0}，nonconforming_topics=[]，max_tokens=743，退出码 0"},
+      "preflight_data": {"command": ".venv\\Scripts\\python.exe -m scripts.preflight_data --topics T0166 T0169 T0174 --enforce-mix", "result": "questions=36，candidate_inputs=114，short=27，medium=3，over_generation_limit=0，nonconforming_topics=[]，退出码 0"},
+      "draft_shard_consistency": {"command": "按审计同口径用 labels 重建 response 后与分片逐行比较", "result": "T0166/T0169/T0174 均为 draft==shard True，各 10 行"}
+    },
+    "artifacts": {
+      "authoring_source": "data/authoring/domains_17_18.py（T0166 槽位05/06/07、T0169 槽位06/07、T0174 槽位05/06/07 的 row 已重写，其余未动）",
+      "regenerated": "用 data/authoring/domains_17_18.py drafts T0166 T0169 T0174 重新生成草稿；重发前已确认该命令对未修改源可复现原草稿（逐字节一致）",
+      "shard_backups": ["data/shards/T0166.jsonl.before_diversity_fix", "data/shards/T0169.jsonl.before_diversity_fix", "data/shards/T0174.jsonl.before_diversity_fix"],
+      "republished": ["data/shards/T0166.jsonl", "data/shards/T0169.jsonl", "data/shards/T0174.jsonl"]
+    },
+    "residual_issues": "无。三个命题的 check_state_diversity 已无冲突；本条记录的长度档位、槽位题型、标签语义与派生字段均未受影响。本批次其他 17 题与其他批次的同类问题不在本次范围内。"
+  }
+}
