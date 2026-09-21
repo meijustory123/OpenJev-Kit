@@ -1,0 +1,21 @@
+{
+  "base_model": "Qwen3.5-0.8B",
+  "train_file": "data/prepared/train.jsonl",
+  "validation_file": "data/prepared/validation.jsonl",
+  "output_dir": "outputs/decision-full",
+  "seed": 20260921,
+  "epochs": 3,
+  "learning_rate": 0.00002,
+  "head_learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_accumulation_steps": 8,
+  "max_length": 1024,
+  "candidate_micro_batch_size": 1,
+  "optimizer": "adafactor",
+  "gradient_checkpointing": true,
+  "parameter_dtype": "float32",
+  "autocast_dtype": "bfloat16",
+  "device": "cuda",
+  "save_every_steps": 100,
+  "max_steps": null
+}
