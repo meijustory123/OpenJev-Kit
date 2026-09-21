@@ -1,0 +1,1180 @@
+{
+  "generated_at": "2026-09-21T14:01:33.410509+08:00",
+  "scope": "T0041—T0060；旅游景区与城市公共交通各10题。仅本分工文件。",
+  "requests": 200,
+  "questions": 240,
+  "shards": 20,
+  "question_types": {
+    "choice": 100,
+    "score": 80,
+    "noul": 60
+  },
+  "label_source": "agent_synthetic",
+  "validation": {
+    "validate_shards": "passed",
+    "encode_candidates": "passed",
+    "max_length": 8192,
+    "actual_max_candidate_tokens": 4602,
+    "tokenizer": "本地Qwen3.5-0.8B；完整候选输入，未截断",
+    "existing_shards_at_start": [],
+    "external_model_api_calls": 0,
+    "training_started": false
+  },
+  "domains": {
+    "旅游景区": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "medium": 1,
+      "long": 1
+    },
+    "城市公共交通": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "medium": 1,
+      "long": 1
+    }
+  },
+  "coverage": {
+    "candidates": 826,
+    "structured_instructions": 20,
+    "structured_candidate_descriptions": 54,
+    "array_states": 17,
+    "mixed_uncertain_noul": 20
+  },
+  "choice_winner_positions_zero_based": {
+    "1": 26,
+    "0": 23,
+    "5": 7,
+    "3": 17,
+    "2": 18,
+    "4": 9
+  },
+  "distinct_probability_vectors": {
+    "choice": 82,
+    "score": 25
+  },
+  "semantic_review": {
+    "method": "作者逐条自查，不是独立外部模型审阅；依据状态及本地给定规则。",
+    "full_topics": {
+      "T0043": {
+        "samples": [
+          "T0043-01",
+          "T0043-02",
+          "T0043-03",
+          "T0043-04",
+          "T0043-05",
+          "T0043-06",
+          "T0043-07",
+          "T0043-08",
+          "T0043-09",
+          "T0043-10"
+        ],
+        "findings": [
+          "逐条重算转场时刻与截止点，区分发车/开讲和停止检票；长记录最终17:00离座，5+14+8分钟，17:27晚于17:20。",
+          "03缺通行时间及检票截止，不能确定衔接；06提前5分钟属中档；09明确超时，不能判不明。",
+          "10按既定行程9:20到达，余裕10分钟；购物改问未来实际行为，避免把尚未决定标成已决定未知。"
+        ]
+      },
+      "T0049": {
+        "samples": [
+          "T0049-01",
+          "T0049-02",
+          "T0049-03",
+          "T0049-04",
+          "T0049-05",
+          "T0049-06",
+          "T0049-07",
+          "T0049-08",
+          "T0049-09",
+          "T0049-10"
+        ],
+        "findings": [
+          "本人情感与同行人引述分开，02和10均有本人明确褒贬，不能标为证据不足。",
+          "03只有李姐的评价，目标小陈本人态度未知；04反讽有本人澄清；09直接否认不满并满意。",
+          "Score始终只衡量不满强度；10的Noul改为本人重游意愿事实，未把没有表达当成态度为假或表达证据不明。"
+        ]
+      },
+      "T0055": {
+        "samples": [
+          "T0055-01",
+          "T0055-02",
+          "T0055-03",
+          "T0055-04",
+          "T0055-05",
+          "T0055-06",
+          "T0055-07",
+          "T0055-08",
+          "T0055-09",
+          "T0055-10"
+        ],
+        "findings": [
+          "01/08为同程不同交易号的两笔未冲正成功扣费；09为同一交易号重复通知，不能当两次扣费。",
+          "02完整核对4+4-4=4净费以及30到26的余额；冲正已成功，非待处理，正常扣费标签成立。",
+          "03交易状态、行程及票价全缺，保持不确定；Score为核验材料完整度，低档文本修为三类均缺失以消除歧义。"
+        ]
+      },
+      "T0057": {
+        "samples": [
+          "T0057-01",
+          "T0057-02",
+          "T0057-03",
+          "T0057-04",
+          "T0057-05",
+          "T0057-06",
+          "T0057-07",
+          "T0057-08",
+          "T0057-09",
+          "T0057-10"
+        ],
+        "findings": [
+          "01/07明确站点和开始时间，恢复待定不等于开始未定；02仅内部知道时间，正式稿缺时间。",
+          "03公告核心正文尚未恢复，增设无法核验类；不以部分正文不可见断定原文两项都没写。",
+          "04最终18:00正式版本完整，旧稿、媒体摘要、语音草稿、实体张贴进度不替代正式对象。09发布员明确确认无名单，属于明确反证。"
+        ]
+      },
+      "T0060": {
+        "samples": [
+          "T0060-01",
+          "T0060-02",
+          "T0060-03",
+          "T0060-04",
+          "T0060-05",
+          "T0060-06",
+          "T0060-07",
+          "T0060-08",
+          "T0060-09",
+          "T0060-10"
+        ],
+        "findings": [
+          "01直接查末班；02愤怒不自动视为投诉，最后请求现场协助；04投诉取消后最新请求找电脑包。",
+          "03缺对象与前文，概率分散；05只有他人已完成动作，本人无请求；06找伞动作明确但车辆定位条件缺失。",
+          "08礼貌疑问是实际接引请求；09明确取消投诉。10根据最后有效请求识别查末班，Noul直接问是否遗失物品而非是否存在记录。"
+        ]
+      }
+    },
+    "additional_boundary_samples": {
+      "T0041-03": "咨询事项与动作缺失，信息不足高于各具体服务类别。",
+      "T0042-03": "周五使用但不知道实际票种，不能套周末票规则直接判不适用。",
+      "T0044-03": "风速是停渡规则必需数值；设备在线和体感不替代风速。",
+      "T0045-03": "东侧明确过窄，西侧门宽未知；不能认定西侧合适。另复核Score低/中档，将不可通行实体障碍与人员尚未到位分开。",
+      "T0046-03": "名单和现场人数均不明，模糊都差不多不能证明到齐。",
+      "T0047-03": "坏了的对象、位置和现象均没有，候选不得凭猜测固定。",
+      "T0048-03": "找一下的对象不明，既可能找人也可能找设施。另将10的Score改为联系定位中断程度，与当前普通寻路场景相容。",
+      "T0050-03": "处理两张票尚不知购退改；没有强行选择退票。",
+      "T0051-03": "公交那个事不能辨认服务类别，未解决不自动当投诉。",
+      "T0052-03": "修正到达为22:34，步行8分钟后22:42；东向22:40截止、西向22:55，缺方向真正改变结论。",
+      "T0053-03": "本小时累计进站350人并非当前在台人数。",
+      "T0054-03": "录像缺段且不能对应班次，无记录不等于无服务。另把班次正常定义限定按时，以免与延误未脱班重叠。",
+      "T0056-03": "无障碍帮助未说明障碍和地点，不能按外观或默认轮椅指定设备。",
+      "T0058-03": "只有不对劲，没有现象或阶段，不能指认部件。",
+      "T0059-03": "只有旁边女士的负面话，目标乘客态度未知；10改问本人未来乘坐行为，不从同事决定推导本人决定。"
+    },
+    "all_slot09": "逐一检查20条均有明确反证，不是仅未提及。",
+    "remaining_known_issues": [],
+    "length_limitation": "按每请求最长候选实测，196短/2中/2长；达到每领域至少1中1长的硬要求，未达到建议的每题7短2中1长覆盖。"
+  },
+  "request_lengths": [
+    {
+      "sample_id": "T0041-01",
+      "max_candidate_tokens": 125,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-02",
+      "max_candidate_tokens": 109,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-03",
+      "max_candidate_tokens": 102,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-04",
+      "max_candidate_tokens": 105,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-05",
+      "max_candidate_tokens": 94,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-06",
+      "max_candidate_tokens": 105,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-07",
+      "max_candidate_tokens": 100,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-08",
+      "max_candidate_tokens": 90,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-09",
+      "max_candidate_tokens": 84,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0041-10",
+      "max_candidate_tokens": 105,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-01",
+      "max_candidate_tokens": 151,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-02",
+      "max_candidate_tokens": 1112,
+      "band": "medium"
+    },
+    {
+      "sample_id": "T0042-03",
+      "max_candidate_tokens": 116,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-04",
+      "max_candidate_tokens": 123,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-05",
+      "max_candidate_tokens": 111,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-06",
+      "max_candidate_tokens": 108,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-07",
+      "max_candidate_tokens": 111,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-08",
+      "max_candidate_tokens": 106,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-09",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0042-10",
+      "max_candidate_tokens": 139,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-01",
+      "max_candidate_tokens": 152,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-02",
+      "max_candidate_tokens": 141,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-03",
+      "max_candidate_tokens": 122,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-04",
+      "max_candidate_tokens": 4513,
+      "band": "long"
+    },
+    {
+      "sample_id": "T0043-05",
+      "max_candidate_tokens": 111,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-06",
+      "max_candidate_tokens": 107,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-07",
+      "max_candidate_tokens": 106,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-08",
+      "max_candidate_tokens": 103,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-09",
+      "max_candidate_tokens": 106,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0043-10",
+      "max_candidate_tokens": 127,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-01",
+      "max_candidate_tokens": 125,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-02",
+      "max_candidate_tokens": 131,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-03",
+      "max_candidate_tokens": 112,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-04",
+      "max_candidate_tokens": 118,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-05",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-06",
+      "max_candidate_tokens": 89,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-07",
+      "max_candidate_tokens": 93,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-08",
+      "max_candidate_tokens": 97,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-09",
+      "max_candidate_tokens": 99,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0044-10",
+      "max_candidate_tokens": 130,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-01",
+      "max_candidate_tokens": 134,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-02",
+      "max_candidate_tokens": 132,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-03",
+      "max_candidate_tokens": 114,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-04",
+      "max_candidate_tokens": 132,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-05",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-06",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-07",
+      "max_candidate_tokens": 99,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-08",
+      "max_candidate_tokens": 97,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-09",
+      "max_candidate_tokens": 90,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0045-10",
+      "max_candidate_tokens": 131,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-01",
+      "max_candidate_tokens": 137,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-02",
+      "max_candidate_tokens": 128,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-03",
+      "max_candidate_tokens": 115,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-04",
+      "max_candidate_tokens": 129,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-05",
+      "max_candidate_tokens": 92,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-06",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-07",
+      "max_candidate_tokens": 101,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-08",
+      "max_candidate_tokens": 109,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-09",
+      "max_candidate_tokens": 101,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0046-10",
+      "max_candidate_tokens": 134,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-01",
+      "max_candidate_tokens": 130,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-02",
+      "max_candidate_tokens": 113,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-03",
+      "max_candidate_tokens": 103,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-04",
+      "max_candidate_tokens": 110,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-05",
+      "max_candidate_tokens": 95,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-06",
+      "max_candidate_tokens": 102,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-07",
+      "max_candidate_tokens": 106,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-08",
+      "max_candidate_tokens": 93,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-09",
+      "max_candidate_tokens": 91,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0047-10",
+      "max_candidate_tokens": 110,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-01",
+      "max_candidate_tokens": 137,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-02",
+      "max_candidate_tokens": 121,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-03",
+      "max_candidate_tokens": 99,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-04",
+      "max_candidate_tokens": 114,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-05",
+      "max_candidate_tokens": 102,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-06",
+      "max_candidate_tokens": 101,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-07",
+      "max_candidate_tokens": 120,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-08",
+      "max_candidate_tokens": 93,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-09",
+      "max_candidate_tokens": 89,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0048-10",
+      "max_candidate_tokens": 123,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-01",
+      "max_candidate_tokens": 130,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-02",
+      "max_candidate_tokens": 119,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-03",
+      "max_candidate_tokens": 113,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-04",
+      "max_candidate_tokens": 119,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-05",
+      "max_candidate_tokens": 105,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-06",
+      "max_candidate_tokens": 91,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-07",
+      "max_candidate_tokens": 97,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-08",
+      "max_candidate_tokens": 84,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-09",
+      "max_candidate_tokens": 90,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0049-10",
+      "max_candidate_tokens": 121,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-01",
+      "max_candidate_tokens": 137,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-02",
+      "max_candidate_tokens": 120,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-03",
+      "max_candidate_tokens": 120,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-04",
+      "max_candidate_tokens": 122,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-05",
+      "max_candidate_tokens": 103,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-06",
+      "max_candidate_tokens": 107,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-07",
+      "max_candidate_tokens": 104,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-08",
+      "max_candidate_tokens": 90,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-09",
+      "max_candidate_tokens": 94,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0050-10",
+      "max_candidate_tokens": 149,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-01",
+      "max_candidate_tokens": 134,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-02",
+      "max_candidate_tokens": 116,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-03",
+      "max_candidate_tokens": 106,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-04",
+      "max_candidate_tokens": 112,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-05",
+      "max_candidate_tokens": 96,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-06",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-07",
+      "max_candidate_tokens": 102,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-08",
+      "max_candidate_tokens": 89,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-09",
+      "max_candidate_tokens": 84,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0051-10",
+      "max_candidate_tokens": 112,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-01",
+      "max_candidate_tokens": 148,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-02",
+      "max_candidate_tokens": 128,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-03",
+      "max_candidate_tokens": 139,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-04",
+      "max_candidate_tokens": 129,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-05",
+      "max_candidate_tokens": 109,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-06",
+      "max_candidate_tokens": 108,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-07",
+      "max_candidate_tokens": 110,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-08",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-09",
+      "max_candidate_tokens": 95,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0052-10",
+      "max_candidate_tokens": 137,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-01",
+      "max_candidate_tokens": 130,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-02",
+      "max_candidate_tokens": 132,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-03",
+      "max_candidate_tokens": 121,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-04",
+      "max_candidate_tokens": 120,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-05",
+      "max_candidate_tokens": 112,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-06",
+      "max_candidate_tokens": 108,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-07",
+      "max_candidate_tokens": 109,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-08",
+      "max_candidate_tokens": 94,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-09",
+      "max_candidate_tokens": 94,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0053-10",
+      "max_candidate_tokens": 123,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-01",
+      "max_candidate_tokens": 163,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-02",
+      "max_candidate_tokens": 135,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-03",
+      "max_candidate_tokens": 145,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-04",
+      "max_candidate_tokens": 143,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-05",
+      "max_candidate_tokens": 150,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-06",
+      "max_candidate_tokens": 132,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-07",
+      "max_candidate_tokens": 155,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-08",
+      "max_candidate_tokens": 118,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-09",
+      "max_candidate_tokens": 113,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0054-10",
+      "max_candidate_tokens": 172,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-01",
+      "max_candidate_tokens": 159,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-02",
+      "max_candidate_tokens": 1044,
+      "band": "medium"
+    },
+    {
+      "sample_id": "T0055-03",
+      "max_candidate_tokens": 126,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-04",
+      "max_candidate_tokens": 127,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-05",
+      "max_candidate_tokens": 111,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-06",
+      "max_candidate_tokens": 120,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-07",
+      "max_candidate_tokens": 121,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-08",
+      "max_candidate_tokens": 101,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-09",
+      "max_candidate_tokens": 103,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0055-10",
+      "max_candidate_tokens": 143,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-01",
+      "max_candidate_tokens": 139,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-02",
+      "max_candidate_tokens": 122,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-03",
+      "max_candidate_tokens": 116,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-04",
+      "max_candidate_tokens": 122,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-05",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-06",
+      "max_candidate_tokens": 103,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-07",
+      "max_candidate_tokens": 97,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-08",
+      "max_candidate_tokens": 89,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-09",
+      "max_candidate_tokens": 93,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0056-10",
+      "max_candidate_tokens": 144,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-01",
+      "max_candidate_tokens": 140,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-02",
+      "max_candidate_tokens": 134,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-03",
+      "max_candidate_tokens": 126,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-04",
+      "max_candidate_tokens": 4602,
+      "band": "long"
+    },
+    {
+      "sample_id": "T0057-05",
+      "max_candidate_tokens": 101,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-06",
+      "max_candidate_tokens": 103,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-07",
+      "max_candidate_tokens": 111,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-08",
+      "max_candidate_tokens": 100,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-09",
+      "max_candidate_tokens": 97,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0057-10",
+      "max_candidate_tokens": 132,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-01",
+      "max_candidate_tokens": 132,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-02",
+      "max_candidate_tokens": 122,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-03",
+      "max_candidate_tokens": 105,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-04",
+      "max_candidate_tokens": 120,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-05",
+      "max_candidate_tokens": 98,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-06",
+      "max_candidate_tokens": 102,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-07",
+      "max_candidate_tokens": 110,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-08",
+      "max_candidate_tokens": 95,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-09",
+      "max_candidate_tokens": 92,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0058-10",
+      "max_candidate_tokens": 141,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-01",
+      "max_candidate_tokens": 136,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-02",
+      "max_candidate_tokens": 126,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-03",
+      "max_candidate_tokens": 112,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-04",
+      "max_candidate_tokens": 119,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-05",
+      "max_candidate_tokens": 89,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-06",
+      "max_candidate_tokens": 94,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-07",
+      "max_candidate_tokens": 96,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-08",
+      "max_candidate_tokens": 87,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-09",
+      "max_candidate_tokens": 85,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0059-10",
+      "max_candidate_tokens": 128,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-01",
+      "max_candidate_tokens": 138,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-02",
+      "max_candidate_tokens": 137,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-03",
+      "max_candidate_tokens": 118,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-04",
+      "max_candidate_tokens": 136,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-05",
+      "max_candidate_tokens": 108,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-06",
+      "max_candidate_tokens": 106,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-07",
+      "max_candidate_tokens": 117,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-08",
+      "max_candidate_tokens": 91,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-09",
+      "max_candidate_tokens": 91,
+      "band": "short"
+    },
+    {
+      "sample_id": "T0060-10",
+      "max_candidate_tokens": 155,
+      "band": "short"
+    }
+  ]
+}

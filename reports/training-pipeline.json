@@ -1,0 +1,11 @@
+{
+  "kind": "tiny_random_architecture",
+  "train_cli": true,
+  "resume_cli": true,
+  "continuous_vs_resumed_max_difference": 0.0,
+  "question_isolation": true,
+  "question_id_invariance": true,
+  "choice_order_invariance": true,
+  "http_inference": true,
+  "checkpoint_inference_max_length": 8192
+}

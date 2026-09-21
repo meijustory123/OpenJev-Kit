@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "properties": {
+    "model": {
+      "type": "string"
+    },
+    "answers": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "choice"
+              },
+              "choice": {
+                "type": "string"
+              },
+              "probabilities": {
+                "type": "object",
+                "minProperties": 1,
+                "additionalProperties": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            },
+            "required": [
+              "type",
+              "choice",
+              "probabilities"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "score"
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 9
+              },
+              "legend": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "probabilities": {
+                "type": "object",
+                "minProperties": 1,
+                "additionalProperties": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            },
+            "required": [
+              "type",
+              "score",
+              "legend",
+              "probabilities"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "noul"
+              },
+              "noul": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "type",
+              "noul"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "usage": {
+      "type": "object",
+      "properties": {
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "input_tokens",
+        "output_tokens"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "model",
+    "answers",
+    "usage"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Jev-style response without confidence",
+  "$comment": "概率和、问题ID、score期望值等关联约束由 openjev.protocol 校验。"
+}

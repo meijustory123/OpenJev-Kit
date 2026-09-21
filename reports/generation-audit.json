@@ -1,0 +1,440 @@
+{
+  "generated_at": "2026-09-21T14:14:53.223253+08:00",
+  "complete": false,
+  "shards": 60,
+  "requests": 600,
+  "questions": 720,
+  "question_types": {
+    "choice": 300,
+    "score": 240,
+    "noul": 180
+  },
+  "splits": {
+    "train": 480,
+    "validation": 60,
+    "test": 60
+  },
+  "topic_families": {
+    "综合判断": 50,
+    "情感分类": 5,
+    "意图识别": 5
+  },
+  "domains": {
+    "电商售后": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "candidate_input_tokens": 77677,
+      "medium": 1,
+      "long": 1
+    },
+    "仓储物流": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "candidate_input_tokens": 54164,
+      "medium": 1,
+      "long": 1
+    },
+    "餐饮门店": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "candidate_input_tokens": 64596,
+      "long": 1,
+      "medium": 1
+    },
+    "酒店住宿": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "candidate_input_tokens": 84158,
+      "medium": 1,
+      "long": 1
+    },
+    "旅游景区": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "candidate_input_tokens": 63289,
+      "medium": 1,
+      "long": 1
+    },
+    "城市公共交通": {
+      "requests": 100,
+      "questions": 120,
+      "short": 98,
+      "candidate_input_tokens": 71253,
+      "medium": 1,
+      "long": 1
+    }
+  },
+  "groups": {
+    "1": {
+      "requests": 250,
+      "structured_candidate_descriptions": 85,
+      "short": 244,
+      "array_states": 25,
+      "structured_instructions": 13,
+      "medium": 3,
+      "mixed_uncertain_noul": 20,
+      "long": 3
+    },
+    "2": {
+      "requests": 250,
+      "structured_instructions": 25,
+      "structured_candidate_descriptions": 45,
+      "short": 246,
+      "array_states": 23,
+      "mixed_uncertain_noul": 25,
+      "medium": 2,
+      "long": 2
+    },
+    "3": {
+      "requests": 100,
+      "structured_instructions": 10,
+      "structured_candidate_descriptions": 24,
+      "short": 98,
+      "array_states": 9,
+      "mixed_uncertain_noul": 10,
+      "medium": 1,
+      "long": 1
+    }
+  },
+  "choice_winner_positions_zero_based": {
+    "1": 106,
+    "2": 65,
+    "4": 12,
+    "3": 40,
+    "0": 66,
+    "5": 11
+  },
+  "distinct_label_vectors": {
+    "choice": 174,
+    "score": 51,
+    "noul": 14
+  },
+  "max_input_tokens": 5219,
+  "candidate_tokens_by_request_length_band": {
+    "short": 250541,
+    "medium": 43099,
+    "long": 121497
+  },
+  "total_candidate_input_tokens": 415137,
+  "input_limit": 8192,
+  "alerts_for_semantic_review": [
+    {
+      "sample_id": "T0027-10",
+      "question_id": "命题",
+      "kind": "check_evidence_sufficiency_vs_unknown_fact",
+      "instructions": "甲批数量是否足够完成今晚全部订单？"
+    }
+  ],
+  "draft_consistency": {
+    "matching": 60
+  },
+  "topic_catalog_sha256": "78fe9bd4382416ac1f48ecbad0facdc5244326575d80058ace4b515446a6732b",
+  "source_files": [
+    {
+      "topic_id": "T0001",
+      "shard_sha256": "8c618a66e349fc62bce5f97f34e4d81516af43732ebece87a45065e581cde931",
+      "draft_sha256": "682c7f57a456bbed1ce68df048de7907e7a5fd79d75856630de7128eca6db228"
+    },
+    {
+      "topic_id": "T0002",
+      "shard_sha256": "4c259086ab5d6e4de34e7abf9b858637955537c7704214467b7aedbafdb1229c",
+      "draft_sha256": "39f1bdfd22b2d5e48288442435ff1b66b46ddafd5e7e04d59ec50406b23f718f"
+    },
+    {
+      "topic_id": "T0003",
+      "shard_sha256": "600089086b9b440124036d6eec674fc99b8ce5ea7eff1e06b4340aa29bba41e2",
+      "draft_sha256": "3ebc1a13680cf08721360428ecc6172c64759fe55e95dd3da60f0a023c8db8d9"
+    },
+    {
+      "topic_id": "T0004",
+      "shard_sha256": "1f0d51f86e45d259f6af9bca027d351ffaac97761d6a591bc83855115d06a031",
+      "draft_sha256": "325578482cb4839111bfc15cc54cf98377a702244207f068204cc3fbd37a3a90"
+    },
+    {
+      "topic_id": "T0005",
+      "shard_sha256": "363b2d92ceab0d8033f6111b68ea3696cbbac8d9fe0555decf9b44fb3ed2e3a7",
+      "draft_sha256": "7315856de2c285d535e9573e7355070a70860007eeb6e262b84361d218e1a189"
+    },
+    {
+      "topic_id": "T0006",
+      "shard_sha256": "f14bddbda2263af9485b971adc7ec249d508e125b306e620b3bf2376d13543b8",
+      "draft_sha256": "155a14f24001e06da3d056197c4af88cb7d05175cf85cf5e1ef83be74ab05e23"
+    },
+    {
+      "topic_id": "T0007",
+      "shard_sha256": "af684578141965b12a34ea99efde78cb8ad8bec798b9be0845c52ead013fa683",
+      "draft_sha256": "22cf5f1270e7f8eddb6f8c96e32fe4ff006de58377a34740e659b5c5dec21970"
+    },
+    {
+      "topic_id": "T0008",
+      "shard_sha256": "bd5fbf74045390bf35784c23142fcbc5dce2b55abc6de31ca019e5baedbda5cb",
+      "draft_sha256": "8ae068d89fade427cb82b82ee5df36903d9932d3fa4bcc79f04f1b259204d751"
+    },
+    {
+      "topic_id": "T0009",
+      "shard_sha256": "c0099eca7f7d1ff7ca8e7b2048449a3d04d162bc43ecf340dfc7bc183c156fdb",
+      "draft_sha256": "d47ad1a4ae027e9ff51b086b519c40e94448b368d124921e0b583803b194604a"
+    },
+    {
+      "topic_id": "T0010",
+      "shard_sha256": "6688b9a77fd7fcdfb6b0eb6ef2c5ca095502c90cd084dc91053ad77e3f3f489d",
+      "draft_sha256": "5d7db4ef9f862368ad5e98909c5fc022e736e385948bc94ae69a65b7c494cb31"
+    },
+    {
+      "topic_id": "T0011",
+      "shard_sha256": "ba6e5bdb552b32543de60cb5b8b09ab75275d74c4522687f6324c319aa977b1c",
+      "draft_sha256": "cfc648237e195317a07560f5852848828223476e349cb195647ff6b67d2920a1"
+    },
+    {
+      "topic_id": "T0012",
+      "shard_sha256": "290a9ff931b99af83868d739d597a826a45bac6b7379c101669dfb0a878f60f4",
+      "draft_sha256": "0b1d0ebf413be7bba4e9bd31d5380429aa4da158b62f4e72509b6a35d26af62e"
+    },
+    {
+      "topic_id": "T0013",
+      "shard_sha256": "11da66000ae1753a2e9ba40ea9f50b2963ca716614b04e1b602b841af0c20350",
+      "draft_sha256": "c4ac1247b70bdd21b39dce8af34cc1bcabdb6c4a66385b96be08aebbc0c6d454"
+    },
+    {
+      "topic_id": "T0014",
+      "shard_sha256": "61afc0718b907bcc71c75e5d04158fb70da527ead5b56aa01cf1d506ef7c9049",
+      "draft_sha256": "1ee8353ad6001597ea33ce11f4f9bc974475c66a1be1c29bc177a63c7dd43133"
+    },
+    {
+      "topic_id": "T0015",
+      "shard_sha256": "7216602fd8dc53a457eef547ff15e96786bb1565868cc17020306bb262d9216d",
+      "draft_sha256": "845c545e47381cebcb3e6f9dc86b4d38cb0d689adf8252919dfd1e31c3b78293"
+    },
+    {
+      "topic_id": "T0016",
+      "shard_sha256": "2c03ad13ec5b41157b0c15468cfa1182bc0613bc4b01a865c287c6571992daf5",
+      "draft_sha256": "e13008ef425bc504709a8cb0f42da7119f90fcf0215c0e919bf5d6cafd75a2ce"
+    },
+    {
+      "topic_id": "T0017",
+      "shard_sha256": "e2683cf91c42f53e6584f02dbadcea0af5ed0dbf64e66a9bd1b177384c7a77cc",
+      "draft_sha256": "e7fccd08b04912edfedbf7551a9cef9acb69a5f2ae665a646c87278af47cae95"
+    },
+    {
+      "topic_id": "T0018",
+      "shard_sha256": "789a046355198a75bbb993240c2870826b1d5d9fa87034de9be9ef724df71dc1",
+      "draft_sha256": "d19ff91633f18afc4ea602280823e344faa407f07fcbd5b769e08dddc1c41926"
+    },
+    {
+      "topic_id": "T0019",
+      "shard_sha256": "9194c30729711cd55ec622fdc6cfc01bf8bbf2629f7f0f68d491bb3d14d7cd48",
+      "draft_sha256": "98cb209572143fe2caf968d44d4c0ee02d5234c5aee1e2cd9eb09a741720f798"
+    },
+    {
+      "topic_id": "T0020",
+      "shard_sha256": "d59cad89726e9847371100a0b766141c1282af69532163099879ec28db00823a",
+      "draft_sha256": "53ffed98e1b56d6a80143fc572265fd2faa4006a5f33b3bc8eb91173577fd497"
+    },
+    {
+      "topic_id": "T0021",
+      "shard_sha256": "68ded2b3eda22844ba8b924a823087bee9e903f0d723bbae5767255a3c9b202e",
+      "draft_sha256": "75d611d8311e83f3ad34c171ef0cbed9d9dee11283678697e4feca166afce636"
+    },
+    {
+      "topic_id": "T0022",
+      "shard_sha256": "ae76c9b87c5fe630592798a5d360bc59a32270b81b89752cb581b406eed194de",
+      "draft_sha256": "934d702c025fb82c827e34341c6887d3b6ed29cee8a943ab039dac347417b2c8"
+    },
+    {
+      "topic_id": "T0023",
+      "shard_sha256": "c5412108d94640769f9fdba342cc05903fcd57737b267943e9fc1cfa4a40a50b",
+      "draft_sha256": "0e22fade14b2750b30cde7659360d5325f5a5b69b37f16a55b6005871ce3e4c1"
+    },
+    {
+      "topic_id": "T0024",
+      "shard_sha256": "cebd7218e687889c98799ee56aa886e0171cf0462d7578df5bd5de1988a0c211",
+      "draft_sha256": "55a91d30ec7c87cae387679f219d0e92e45ae13a011a541b9fbc7cee7ac202ae"
+    },
+    {
+      "topic_id": "T0025",
+      "shard_sha256": "08cfe86ced629600543757504d4bf381534cef63b1131d94322a1e3a1e058276",
+      "draft_sha256": "163876191cc031cf96b1ab7957dfc6dbf19d64f3c79b1e603898b52665583176"
+    },
+    {
+      "topic_id": "T0026",
+      "shard_sha256": "e15ed0b85457c694bd613f9dec0487081247744a80f56790396419902f99b4ec",
+      "draft_sha256": "bc82884dfd379865965124a0d94df84c0ecefd03b6dc4af1c9a8ebf1c2255111"
+    },
+    {
+      "topic_id": "T0027",
+      "shard_sha256": "9e1013c195c37052c40e8861a22a13368223135101a8d7509cdd58da556aa27e",
+      "draft_sha256": "0e90cea5705a59836d5cb61ff8736af8d42c9ff1a57a7f39959ac4dcb27ce8cb"
+    },
+    {
+      "topic_id": "T0028",
+      "shard_sha256": "fc0ff206bff7ac75a4f6fb3e4e7fd51b8a60131e96233f574845926574de264c",
+      "draft_sha256": "38c473796a03d4c16c9d73c80bbae98a5e23738e86a1833cb987b74ba8c10457"
+    },
+    {
+      "topic_id": "T0029",
+      "shard_sha256": "2874932aa7db9f3c35966160396a3bab5087eb16a8ae352e447847bb70a42bdb",
+      "draft_sha256": "f6677d7eb5d509ba46d58c33d7ac29fe65920c25791af88f14b2a0be1fe5053e"
+    },
+    {
+      "topic_id": "T0030",
+      "shard_sha256": "34f395df1ef59d3948161f1191a9cfb503475db818615bf0c5330ae22fc0da01",
+      "draft_sha256": "15a9c2ff017b48974da93b9014f10a7c17836c599535ad7f72c73686bdffd8f5"
+    },
+    {
+      "topic_id": "T0031",
+      "shard_sha256": "a94e62898871ef516f76e39d040f9d0060d0e4a378a2c133ae6d5f4f3ed9ac76",
+      "draft_sha256": "f750305399694039e714765a1e96aff689b8136ce00ec90a79e7730ac99576c4"
+    },
+    {
+      "topic_id": "T0032",
+      "shard_sha256": "64c60fdd274753e2dd8201535f8b1cb9f62adeab652d0aa8a84c6370b699cefc",
+      "draft_sha256": "342db6cf08c37bde428b736139b732fd20251e50d5be0ee0fea3744dcf9b1dc2"
+    },
+    {
+      "topic_id": "T0033",
+      "shard_sha256": "88dda6a67d4a7cf6626aa2b7fda6eb040701b1e9e074753b832fc4c4e42f655d",
+      "draft_sha256": "a57846c0b6bb07303947ecd484cb3467f1f98156e21ee69e3789102ffb46f1d4"
+    },
+    {
+      "topic_id": "T0034",
+      "shard_sha256": "00541132dfd880f9e08eae23813aaad56561dc6f30845a55fc60d798d8b1491b",
+      "draft_sha256": "ae366d963cb35eb2f75c18a1e78bb9e33f7aa141d7aa67931a979d85fc26f260"
+    },
+    {
+      "topic_id": "T0035",
+      "shard_sha256": "33f2f0834b0888643d2475d877fb3cae6f47f740803562361df16ef83d5f59aa",
+      "draft_sha256": "a3d573dfe393d70f1303f53b7de2d304295c06997543a8ce2530f0da9a21747a"
+    },
+    {
+      "topic_id": "T0036",
+      "shard_sha256": "e76d890cd63e7ad32837a9b83679166df36d236f6a1e05842cd9fa826217bbe6",
+      "draft_sha256": "1c4134cd9c16a696bb1cc5bf7a211bbece032c670336557dbdb30452ab0de8bb"
+    },
+    {
+      "topic_id": "T0037",
+      "shard_sha256": "980ce67ea744491edca8a508b7a6967085ac56cb6186bc405abbceeaf1af6bd1",
+      "draft_sha256": "fa7a66ec1757fb2968f8b36012d65a46c6e7ce98e5cd836fc4ddeff21f7db875"
+    },
+    {
+      "topic_id": "T0038",
+      "shard_sha256": "5a1594c09aa7e56aab1abfcf9d95acf31e08535d45cb3961b0db9b7d8efd84b3",
+      "draft_sha256": "d96524b21b893ca3bc0f054eabd8a79306e9a1c843a05f4a76fa69776e14ca8d"
+    },
+    {
+      "topic_id": "T0039",
+      "shard_sha256": "8e6a4498c359a5dd801c28d2729a41034da52eef6178834cd85d5f83890d04cf",
+      "draft_sha256": "7e64f3fa465632d828c57286f41d9f69733f6ee719174d05b1808195fbcab578"
+    },
+    {
+      "topic_id": "T0040",
+      "shard_sha256": "761a9bb06120ae0d7f1cbc47cba2eea017a684f3b29228636ac9f7db87aa8a87",
+      "draft_sha256": "235ad258525dde53f8001f753e38ebe634e21ddf9710bce275fd4490b78dd850"
+    },
+    {
+      "topic_id": "T0041",
+      "shard_sha256": "13a1d01ffd8e1a89ecb24eb77d02d0a27c023a7fff7301be7d91c80aff0a52b9",
+      "draft_sha256": "9b64dac63de14556262695d698df95cbd343dd0cc7852f950a5b908464ca46a3"
+    },
+    {
+      "topic_id": "T0042",
+      "shard_sha256": "53584d4e1c7571f6132db2ac8845243bb8f27d28c0922b9022ad7ace85c31f67",
+      "draft_sha256": "c7a75209f847ae04e27a2e2379ecf37b1c295ff7aab93d0970b0de599cf93a93"
+    },
+    {
+      "topic_id": "T0043",
+      "shard_sha256": "b219b790beac15f2a082fea1687eb612386486ba30bdfd7aea52de4a1eef963d",
+      "draft_sha256": "fdfb624fa0d09051d8e948bfc6ffd420731dcf88b0e182d5d25f00ef9c7d3678"
+    },
+    {
+      "topic_id": "T0044",
+      "shard_sha256": "a82e38dc576b97d5966eba67b3b14bd79409613503211b094ce4476d38bf66c1",
+      "draft_sha256": "d7257dd177d3116af7b20019eec91faa71a99fa27b064289bf2a73a5fbd8077b"
+    },
+    {
+      "topic_id": "T0045",
+      "shard_sha256": "88a3500836293f1d8ef5c0513c0ad03a039f1d312d5695fcbae7d9db678b3814",
+      "draft_sha256": "db7ef6bf4c678ff73bd270de26aad82b24483778dfb86dc228e8d4f5faaef38e"
+    },
+    {
+      "topic_id": "T0046",
+      "shard_sha256": "306f2165c7aeb30e62f88be2d8b597cebaf9bb3406f2350943aad5673a2dfb4a",
+      "draft_sha256": "21a9c221a0b0c8a86f9d20fd1148459e1e87e1484417a5d72b9003bf3562888d"
+    },
+    {
+      "topic_id": "T0047",
+      "shard_sha256": "ba08e82b87196065ab3670dd5f3f4a289cb7f46763065ae6cffbd4b5fe4e1d21",
+      "draft_sha256": "a8707dceb881230694b9ed5f944e99244b40051914a59f1e5be8cfd8befc8a91"
+    },
+    {
+      "topic_id": "T0048",
+      "shard_sha256": "76aed5d97688ba3fb16ada6731879e1e9d8e15b11a119d05696670eb6910f53e",
+      "draft_sha256": "76e77e7782dbe46d1ea50e36a2f8f4a50df757e675454c5815b68d76d415f8f4"
+    },
+    {
+      "topic_id": "T0049",
+      "shard_sha256": "59ccaf55df16df2144a6c8eee15395c68e17b973d5dfcce047e96b6f5752ad33",
+      "draft_sha256": "097261703fbd31e68c7644d852349737d5b9ae3df4b687e26cacf668f6aa315a"
+    },
+    {
+      "topic_id": "T0050",
+      "shard_sha256": "168370a6c0162b1bc3d96ccfe4d5104a4f713391860b4aaf58bc5e18c7efd4cb",
+      "draft_sha256": "293e146a2727cc6949eee99fe5ca589cad278e03f5e5483d4db7a20e27da3bb3"
+    },
+    {
+      "topic_id": "T0051",
+      "shard_sha256": "4b27f62d2dfcf73f550cec9642f3d50fdec1f83f0a66c69253f920a823d22f61",
+      "draft_sha256": "8498030eb8c03304d5b9ead882fd77211528395ae895d5861d49c11114183536"
+    },
+    {
+      "topic_id": "T0052",
+      "shard_sha256": "5dd83eb48818ef3b047dcd6103c74838aca08ed2a916da73bc832b09046a0073",
+      "draft_sha256": "9aaa05ce254f4b6e33a246c4943680c0db7204031ef3ffa7abe407141cc256c6"
+    },
+    {
+      "topic_id": "T0053",
+      "shard_sha256": "eb557c127af192ea08863fb551a172cb67cca05a2ba37bc025f9075ca29aa5ba",
+      "draft_sha256": "2d7d2f33504e52e0126340e664fd625adb91dd8cf6fa867453009b6bdacf6895"
+    },
+    {
+      "topic_id": "T0054",
+      "shard_sha256": "5264ad8b6fb5f19bc1c56a9c3bfffc8676c34d882685aea4e87dc526b2ac4004",
+      "draft_sha256": "b5861276910a9de348484a3a9c6b865c0bbc52b8c0c96ba859caee5150eeaa91"
+    },
+    {
+      "topic_id": "T0055",
+      "shard_sha256": "02117ddacc384db2c1847829d0ec36d4d9993fa7d1f0ebe5e5ca1072ff6feba0",
+      "draft_sha256": "30bacf4e8f7d761a67045ad9577566b43379175e83727632bc8c92ec8688071c"
+    },
+    {
+      "topic_id": "T0056",
+      "shard_sha256": "a2af2b5299f2b546f11e83d0ebadf7a22bd7ec8c09328d8b06b9aeccdf543d71",
+      "draft_sha256": "0c3f837cf44826183a62c7f629a4dafabdf24210d9d2dd20b88f38e7aed3d40a"
+    },
+    {
+      "topic_id": "T0057",
+      "shard_sha256": "31fb8e6b1aa8eb236ee1923813489b8ed5013dcc96b84df7eabde503114e1212",
+      "draft_sha256": "8c050d1fc80b3485f360831cac9f0d6924e9727ee4bf913ff541ef6197884c41"
+    },
+    {
+      "topic_id": "T0058",
+      "shard_sha256": "cdc9debc57a1f5c5f2152a6c20b322e601cb1e5f9b293b42602a12936e1537d3",
+      "draft_sha256": "6d22b0da176c55748b6b764da817842fff55f6fc8ff6af54a512f914ad7e0be6"
+    },
+    {
+      "topic_id": "T0059",
+      "shard_sha256": "2fcfdb39af6d8e7b689d1b913964e1bf720d50fd80ad70cc4ad49ae6138d753f",
+      "draft_sha256": "d6be7d138f1ba6619f2e3a160843d211fe5d39138b9175470b506b728a0267b5"
+    },
+    {
+      "topic_id": "T0060",
+      "shard_sha256": "0098083d68ff8dc8f4e1d81f88456d6c246a3c668a110d08b368cd1b1d93563e",
+      "draft_sha256": "916c1b7d5bc806e91fe1563086b46a1e4fcb9dac5c9a00dcbacd50c10e1f5bc4"
+    }
+  ],
+  "scope": "Structure, exact duplication, selected heuristics and optional token lengths; semantic correctness requires separate review."
+}

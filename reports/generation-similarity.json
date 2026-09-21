@@ -1,0 +1,7 @@
+{
+  "samples": 600,
+  "candidate_pairs": 0,
+  "threshold": 0.82,
+  "matches": [],
+  "scope": "Approximate MinHash candidate retrieval and exact character-4gram Jaccard on normalized state text. Not exhaustive semantic duplicate detection; all matches require review."
+}

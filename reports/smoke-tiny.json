@@ -1,0 +1,14 @@
+{
+  "kind": "tiny_random_architecture",
+  "parameters": 16073193,
+  "all_parameters_trainable": true,
+  "backbone_parameter_changed": true,
+  "losses": [
+    0.6868001818656921,
+    0.6706179976463318
+  ],
+  "checkpoint_reload_matches": true,
+  "candidate_tokens": 127,
+  "peak_cuda_allocated_gb": 0.256,
+  "seconds": 1.84
+}

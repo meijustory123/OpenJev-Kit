@@ -173,7 +173,10 @@ def labels_from_response(request, response):
             raise ValueError(f"{key}: 响应字段不正确")
         for field, value in expected.items():
             actual = answer[field]
-            if isinstance(value, float):
+            if field == "probabilities":
+                if set(actual) != set(value) or any(abs(probability(actual[k]) - v) > 1e-6 for k, v in value.items()):
+                    raise ValueError(f"{key}.probabilities: 与问题或概率不一致")
+            elif isinstance(value, float):
                 if isinstance(actual, bool) or not isinstance(actual, (float, int)) or not math.isfinite(actual) or abs(value - actual) > 1e-6:
                     raise ValueError(f"{key}.{field}: 数值不符合本地派生规则")
             elif actual != value:

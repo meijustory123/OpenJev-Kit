@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-21",
+  "unit_tests": {
+    "protocol": 12,
+    "data_workflow": 5,
+    "http_contract": 1,
+    "total_passed": 20,
+    "input_boundary_and_cpu_gradient": 2
+  },
+  "gpu_pipeline_tests_passed": 1,
+  "tiny_smoke_passed": true,
+  "real_model_smoke_passed": true,
+  "real_model_1024_tokens_6_candidates_smoke_passed": true,
+  "dependency_check": "passed",
+  "original_model_unchanged": true,
+  "original_model_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+  "formal_training_samples_generated": 0,
+  "full_training_started": false,
+  "gpu_candidate_replay_gradient_tests_passed": 1,
+  "total_current_tests_passed": 22,
+  "real_model_8192_tokens_6_candidates_smoke_passed": true,
+  "configured_max_input_tokens": 8192,
+  "preflight_length_coverage_check": "passed",
+  "checkpoint_inference_max_length": 8192,
+  "windows_shared_gpu_memory_observation": {
+    "sample_gib": 2.01,
+    "is_peak": false,
+    "timestamp_local": "2026-09-21T13:27:32+08:00",
+    "source": "Windows GPU Process Memory counter"
+  },
+  "historical_reports": [
+    "smoke-tiny.json",
+    "smoke-real.json",
+    "smoke-real-stress.json"
+  ],
+  "current_long_input_report": "smoke-real-stress-8192.json",
+  "topics": {
+    "total": 500,
+    "domains": 50,
+    "emotion_classification": 25,
+    "intent_recognition": 25,
+    "general_decisions": 450
+  }
+}

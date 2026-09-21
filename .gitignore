@@ -1,5 +1,6 @@
 .venv/
 .uv-cache/
+.pip-cache/
 .hf-cache/
 .hf-download-tools/
 Qwen3.5-0.8B/

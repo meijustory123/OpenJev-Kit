@@ -1,0 +1,36 @@
+{
+  "total_topics": 500,
+  "domains": 50,
+  "requests_per_topic": 10,
+  "total_planned_requests": 5000,
+  "configured_max_input_tokens": 8192,
+  "topic_families": {
+    "综合判断": {
+      "topics": 450,
+      "domains": 50,
+      "splits": {
+        "train": 361,
+        "validation": 43,
+        "test": 46
+      }
+    },
+    "情感分类": {
+      "topics": 25,
+      "domains": 25,
+      "splits": {
+        "train": 20,
+        "validation": 2,
+        "test": 3
+      }
+    },
+    "意图识别": {
+      "topics": 25,
+      "domains": 25,
+      "splits": {
+        "test": 1,
+        "train": 19,
+        "validation": 5
+      }
+    }
+  }
+}

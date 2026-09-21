@@ -1,0 +1,14 @@
+{
+  "kind": "real_base_model",
+  "parameters": 752394049,
+  "all_parameters_trainable": true,
+  "backbone_parameter_changed": true,
+  "losses": [
+    0.5646798014640808,
+    0.975390613079071
+  ],
+  "checkpoint_reload_matches": true,
+  "candidate_tokens": 127,
+  "peak_cuda_allocated_gb": 7.531,
+  "seconds": 11.42
+}

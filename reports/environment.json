@@ -1,0 +1,26 @@
+{
+  "python": "3.11.15 (main, May 10 2026, 19:31:25) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.22631-SP0",
+  "ram_gb": 47.35,
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.5.0",
+    "accelerate": "1.12.0",
+    "safetensors": "0.7.0",
+    "fastapi": "0.128.0"
+  },
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "vram_gb": 15.9,
+  "cuda": "12.8",
+  "capability": [
+    12,
+    0
+  ],
+  "bf16_supported": true,
+  "cuda_forward_backward": true,
+  "model_files": [
+    "Qwen3.5-0.8B\\model.safetensors-00001-of-00001.safetensors"
+  ],
+  "model_ready": true
+}
