@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-09-21T16:22:33.050212+08:00",
+  "shards": 500,
+  "requests": 5000,
+  "questions": 6000,
+  "prepared_matches_shards": true,
+  "splits": {
+    "train": {
+      "requests": 4000,
+      "questions": 4800,
+      "topics": 400
+    },
+    "validation": {
+      "requests": 500,
+      "questions": 600,
+      "topics": 50
+    },
+    "test": {
+      "requests": 500,
+      "questions": 600,
+      "topics": 50
+    }
+  },
+  "data_sha256": {
+    "train.jsonl": "dbe3d3516d42006e1dcf098ba901d2e41e66d89b8b7a1975fa39310039f8fc9a",
+    "train_requests.jsonl": "447c93daae5c64d60c388a74edab7310fefd3154fd5cd2b9933ba68fde17d995",
+    "validation.jsonl": "b970b1acbd7a8ebb45a171d5e36de2455623085be86a647013f7f08eb87467f2",
+    "validation_requests.jsonl": "c98e7b3e4face7aa27af5c13d28c1aaf1f6c98fab23d0e89c6ed1225f0633ab7",
+    "test.jsonl": "8163d90d8bf43a5f35f66a6add012f2aed58d66524ff23fad5bfdea82a174fae",
+    "test_requests.jsonl": "547ef9f93cf4056b771b77684ecf9954d04a03eaba353b78fab96a300e4a3270"
+  },
+  "disk_free_gib": 944.45
+}

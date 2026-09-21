@@ -1,0 +1,36 @@
+{
+  "shutdown": "passed",
+  "port_conflict_fallback": {
+    "passed": true,
+    "port": 52569
+  },
+  "close_does_not_target_training": true,
+  "restart": {
+    "passed": true,
+    "pid": 39480,
+    "port": 8765
+  },
+  "real_model_available": false,
+  "training_continues": true,
+  "training_step": 21,
+  "ui_test": "browser: waiting state, examples, form/JSON switch and score fields checked",
+  "automated_tests": {
+    "passed": 6,
+    "files": [
+      "tests/test_webapp.py",
+      "tests/test_api.py"
+    ],
+    "covers": [
+      "complete checkpoint selection",
+      "waiting then automatic load",
+      "API input validation and response contract",
+      "load error and retry",
+      "exclusive inference",
+      "session and shutdown"
+    ]
+  },
+  "validation_limit": "本次训练尚未产生完整断点；真实微调权重的网页预测尚未执行。加载生命周期和接口以隔离测试引擎验证，生产服务未使用测试引擎。",
+  "production_url": "http://127.0.0.1:8765",
+  "start_file": "启动决策模型.cmd",
+  "stop_file": "关闭决策模型.cmd"
+}

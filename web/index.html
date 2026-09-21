@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenJev · 决策工作台</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">J</span><strong>OpenJev</strong><span class="local-tag">本机运行</span></div>
+    <button id="shutdown" class="quiet">退出工具</button>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">QWEN 3.5 · 全量微调</p><h1>决策工作台</h1><p class="subtitle">给出状态与判断标准，让模型返回清楚的结构化结果。</p></div>
+      <div class="intro-note"><span>三种判断，一处完成</span><strong>分类 <i>／</i> 评分 <i>／</i> 是非</strong></div>
+    </section>
+    <section class="model-panel" aria-label="模型状态">
+      <div class="status-line"><span id="status-dot" class="status-dot"></span><strong id="status-title">正在连接本机服务</strong><span id="model-detail"></span></div>
+      <p id="status-message" role="status" aria-live="polite">正在获取模型状态…</p>
+      <div class="model-footer"><span id="training-progress"></span><div class="model-controls"><label for="device">运行设备</label><select id="device"><option value="auto">自动选择</option><option value="cuda">显卡</option><option value="cpu">CPU</option></select><button id="reload" class="small-button" disabled>加载最新模型</button></div></div>
+    </section>
+    <div class="workspace">
+      <section class="card input-card" aria-labelledby="input-title">
+        <div class="card-heading"><div><span class="section-number">01</span><h2 id="input-title">设置判断</h2></div><div class="tabs" role="tablist" aria-label="输入方式"><button id="form-tab" role="tab" aria-selected="true" aria-controls="form-panel">表单</button><button id="json-tab" role="tab" aria-selected="false" aria-controls="json-panel">请求 JSON</button></div></div>
+        <div class="examples"><span>试试示例</span><button data-example="intent">意图识别</button><button data-example="emotion">情感分类</button><button data-example="mixed">混合判断</button></div>
+        <div id="form-panel" role="tabpanel" aria-labelledby="form-tab">
+          <label class="field-label" for="state">当前状态</label><textarea id="state" rows="5" placeholder="描述事实、对话或业务记录。需要使用的规则也请写在这里。"></textarea>
+          <div class="field-row"><div><label class="field-label" for="type">判断类型</label><select id="type"><option value="choice">分类 · 选择最匹配的一项</option><option value="score">评分 · 按有序等级评价</option><option value="noul">是非 · 判断命题是否成立</option></select></div><div><label class="field-label" for="question-id">问题名称</label><input id="question-id" value="当前诉求" maxlength="100"></div></div>
+          <label class="field-label" for="instructions">要判断什么？</label><textarea id="instructions" rows="2" placeholder="例如：根据最后一次明确表达，判断客户当前希望如何处理。"></textarea>
+          <div id="criteria-field"><label id="criteria-label" class="field-label" for="criteria">候选选项</label><textarea id="criteria" rows="5"></textarea><p id="criteria-help" class="hint">每行一项，格式：名称 | 描述。名称不能重复。</p></div>
+        </div>
+        <div id="json-panel" role="tabpanel" aria-labelledby="json-tab" hidden><label class="field-label" for="request-json">完整请求</label><textarea id="request-json" class="code" rows="20" spellcheck="false" aria-describedby="json-help"></textarea><p id="json-help" class="hint">支持结构化 state 和多个独立问题，使用 Jev 兼容的请求格式。</p></div>
+        <div id="input-error" class="error-box" role="alert" hidden></div>
+        <div class="action-bar"><span id="input-hint" class="hint">每个候选输入最多 8,192 token</span><button id="submit" class="primary" disabled><span id="submit-text">开始判断</span><span aria-hidden="true">↗</span></button></div>
+      </section>
+      <section class="card result-card" aria-labelledby="result-title">
+        <div class="card-heading"><div><span class="section-number">02</span><h2 id="result-title">判断结果</h2></div><span id="timing" class="hint"></span></div>
+        <div id="result-empty" class="empty-state"><div class="empty-symbol" aria-hidden="true">⌘</div><h3>等待你的第一个判断</h3><p>选择一个示例，或输入自己的状态。<br>模型就绪后，结果会显示在这里。</p><div class="empty-types"><span>分类概率</span><span>等级评分</span><span>是非判断</span></div></div>
+        <div id="result-loading" class="empty-state" hidden><div class="spinner" aria-hidden="true"></div><h3>模型正在判断</h3><p>多个问题会依次处理。<br>CPU 运行可能需要较长时间，请稍候。</p></div>
+        <div id="results" aria-live="polite"></div>
+        <div id="result-meta" class="result-meta" hidden><span id="token-count"></span><button id="download" class="quiet">下载结果</button></div>
+        <details id="raw-details" hidden><summary>查看完整响应 JSON</summary><div class="raw-actions"><button id="copy" class="small-button">复制 JSON</button></div><pre id="response-json"></pre></details>
+      </section>
+    </div>
+    <footer>内容只发送到本机服务 · 仅使用完整微调断点 · 概率由本地模型计算</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-09-21T16:26:05.503648+08:00",
+  "status_at_check": "running",
+  "mode": "full_finetune",
+  "parameters": 752394049,
+  "trainable_parameters": 752394049,
+  "epochs": 3,
+  "planned_steps": 1800,
+  "last_observed_step": {
+    "step": 2,
+    "epoch": 1,
+    "loss": 1.2342687919735909,
+    "elapsed_seconds": 100.9
+  },
+  "launcher_pid": 29292,
+  "processes_observed": [
+    {
+      "pid": 29292,
+      "parent_pid": 37124,
+      "name": "python.exe",
+      "rss_gib": 0.006,
+      "cpu_seconds": 0.0
+    },
+    {
+      "pid": 34808,
+      "parent_pid": 29292,
+      "name": "python.exe",
+      "rss_gib": 4.008,
+      "cpu_seconds": 715.98
+    }
+  ],
+  "output_dir": "outputs\\decision-full",
+  "datasets_changed": false,
+  "formal_training_complete": false
+}
