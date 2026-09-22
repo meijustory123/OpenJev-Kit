@@ -145,10 +145,13 @@ class ModelManager:
         if preference == "cuda":
             if not torch.cuda.is_available():
                 raise ValueError("未检测到可用显卡，请选择CPU。")
+            if not torch.cuda.is_bf16_supported():
+                raise ValueError("当前显卡不支持模型所需的 BF16 运算，请选择CPU。")
             return "cuda"
         if training_status(self.output)["active"]:
             return "cpu"
-        if torch.cuda.is_available() and torch.cuda.mem_get_info()[0] >= 6 * 1024 ** 3:
+        if (torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+                and torch.cuda.mem_get_info()[0] >= 6 * 1024 ** 3):
             return "cuda"
         return "cpu"
 

@@ -127,3 +127,13 @@ def test_waiting_server_automatically_loads_first_saved_checkpoint(tmp_path):
     checkpoint(tmp_path, 100, complete=True)
     assert wait_ready(manager, timeout=8)["checkpoint"] == "checkpoint-000100"
     manager.stop()
+
+
+def test_auto_device_uses_cpu_when_gpu_lacks_bf16(tmp_path, monkeypatch):
+    import torch
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+    monkeypatch.setattr(torch.cuda, "is_bf16_supported", lambda: False)
+    manager = ModelManager(tmp_path)
+    assert manager._choose_device("auto") == "cpu"
+    with pytest.raises(ValueError, match="BF16"):
+        manager._choose_device("cuda")

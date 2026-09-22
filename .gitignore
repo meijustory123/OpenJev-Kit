@@ -9,6 +9,7 @@ Qwen3.5-0.8B/
 __pycache__/
 .pytest_cache/
 outputs/
+dist/
 data/drafts/
 data/shards/
 data/prepared/
