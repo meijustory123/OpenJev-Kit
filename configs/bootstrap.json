@@ -1,0 +1,14 @@
+{
+  "python": {
+    "version": "3.11.16",
+    "build": "20260901",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.11.16%2B20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+    "sha256": "06cbe479e039f5b9cb5640c286d790074d63f549f92a32d599a3748293bd4510",
+    "size": 25189257
+  },
+  "torch_cpu": {
+    "version": "2.10.0+cpu",
+    "url": "https://download-r2.pytorch.org/whl/cpu/torch-2.10.0%2Bcpu-cp311-cp311-win_amd64.whl",
+    "sha256": "17a09465bab2aab8f0f273410297133d8d8fb6dd84dccbd252ca4a4f3a111847"
+  }
+}

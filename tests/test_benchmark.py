@@ -1,4 +1,6 @@
 import copy
+import json
+from types import SimpleNamespace
 
 import pytest
 
@@ -75,3 +77,20 @@ def test_exact_half_is_not_a_correct_definite_noul_prediction():
     response["answers"]["noul"]["noul"] = 0.5
     metrics = summarize([row], [{"sample_id": "test-01", "response": response, "seconds": 1}])["metrics"]
     assert metrics["noul"]["definite_binary_agreement"]["correct"] == 0
+
+
+def test_gpu_run_without_cuda_fails_before_creating_predictions(tmp_path, monkeypatch):
+    import torch
+    from scripts.benchmark import run
+
+    checkpoint = tmp_path / "checkpoint"
+    checkpoint.mkdir()
+    (checkpoint / "COMPLETE").touch()
+    data = tmp_path / "test.jsonl"
+    data.write_text(json.dumps(sample()) + "\n", encoding="utf-8")
+    output = tmp_path / "run"
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: False)
+    with pytest.raises(RuntimeError, match="CPU fallback is disabled"):
+        run(SimpleNamespace(data=data, limit=0, output=output, backend="gpu",
+                            checkpoint=checkpoint, threads=1))
+    assert not (output / "predictions.jsonl").exists()

@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-09-22T04:50:24.473636+00:00",
+  "platform": "Windows x64 / Windows PowerShell 5.1",
+  "fresh_install": {
+    "ignore_system_python": true,
+    "python": "3.11.16",
+    "torch": "2.10.0+cpu",
+    "ready": true,
+    "unicode_and_space_path": true
+  },
+  "repair_missing_httpx_with_existing_metadata": true,
+  "concurrent_repeated_startup_no_reinstall": true,
+  "fresh_webpage_http_status": 200,
+  "fresh_model_without_checkpoint": "waiting",
+  "main_launcher_exit_code": 0,
+  "main_service_healthy": true,
+  "existing_environment": {
+    "python": "3.11.15",
+    "torch": "2.10.0+cu128",
+    "reused": true
+  },
+  "tests": {
+    "passed": 40,
+    "skipped_gpu": 2
+  }
+}

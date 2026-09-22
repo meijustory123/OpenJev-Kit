@@ -1,4 +1,6 @@
 .venv/
+.venv.backup-*/
+.runtime/
 .uv-cache/
 .pip-cache/
 .hf-cache/

@@ -1,4 +1,4 @@
-"""Resumable fixed-test CPU / official Jev benchmark. Never persist credentials."""
+"""Resumable fixed-test CPU / GPU / official Jev benchmark. Never persist credentials."""
 import argparse
 import datetime as dt
 import getpass
@@ -43,13 +43,24 @@ def run(args):
     signature = {"data_sha256": sha256(args.data), "requests": len(rows),
                  "sample_ids": [r["sample_id"] for r in rows], "backend": args.backend,
                  "metric_version": METRIC_VERSION}
-    if args.backend == "cpu":
+    if args.backend in {"cpu", "gpu"}:
         checkpoint = Path(args.checkpoint)
         if not (checkpoint / "COMPLETE").is_file():
             raise ValueError("Incomplete checkpoint")
         files = sorted(p for p in checkpoint.rglob("*") if p.is_file() and p.name != "training_state.pt")
         signature.update(checkpoint=checkpoint.name, device="cpu", dtype="float32", threads=args.threads,
                          micro_batch_size=1, weights_and_config_sha256={str(p.relative_to(checkpoint)): sha256(p) for p in files})
+        if args.backend == "gpu":
+            import torch
+            if not torch.cuda.is_available() or not torch.cuda.is_bf16_supported():
+                raise RuntimeError("GPU evaluation requires CUDA with BF16 support; CPU fallback is disabled")
+            signature.update(device="cuda:0", dtype="bfloat16", head_dtype="float32",
+                             autocast_dtype="bfloat16", gpu_name=torch.cuda.get_device_name(0),
+                             compute_capability=list(torch.cuda.get_device_capability(0)),
+                             torch_version=torch.__version__, cuda_version=torch.version.cuda,
+                             float32_matmul_precision=torch.get_float32_matmul_precision(),
+                             allow_tf32_matmul=torch.backends.cuda.matmul.allow_tf32,
+                             allow_tf32_cudnn=torch.backends.cudnn.allow_tf32)
     else:
         signature.update(endpoint="https://api.typesafe.ai/v1/systemone", requested_model="jev-latest")
     meta_path = args.output / "run.json"
@@ -68,16 +79,25 @@ def run(args):
     if len(ids) != len(done) or not ids <= set(signature["sample_ids"]):
         raise ValueError("Invalid or duplicate cached sample IDs")
     pending = [r for r in rows if r["sample_id"] not in ids]
-    if args.backend == "cpu" and pending:
+    if args.backend in {"cpu", "gpu"} and pending:
         import torch
         from openjev.inference import Engine
         torch.set_num_threads(args.threads)
         torch.set_num_interop_threads(1)
-        engine = Engine(args.checkpoint, device="cpu", micro_batch_size=1)
-        if any(p.device.type != "cpu" or p.dtype != torch.float32 for p in engine.model.parameters()):
-            raise RuntimeError("CPU FP32 evaluation requires all parameters on CPU in FP32")
+        engine = Engine(args.checkpoint, device=signature["device"], micro_batch_size=1)
+        if args.backend == "cpu":
+            if any(p.device.type != "cpu" or p.dtype != torch.float32 for p in engine.model.parameters()):
+                raise RuntimeError("CPU FP32 evaluation requires all parameters on CPU in FP32")
+        else:
+            if any(p.device != torch.device("cuda:0") for p in engine.model.parameters()):
+                raise RuntimeError("GPU evaluation requires all parameters on CUDA:0")
+            if (any(p.dtype != torch.bfloat16 for p in engine.model.backbone.parameters()) or
+                    any(p.dtype != torch.float32 for p in engine.model.head.parameters())):
+                raise RuntimeError("GPU evaluation requires BF16 backbone and FP32 decision head")
+            torch.cuda.synchronize(0)
         predict = engine.predict
-        print(f"Loaded {checkpoint.name} on CPU FP32, threads={args.threads}; pending={len(pending)}", flush=True)
+        print(f"Loaded {checkpoint.name} on {signature['device']} {signature['dtype']}, "
+              f"threads={args.threads}; pending={len(pending)}", flush=True)
     elif args.backend == "official" and pending:
         import httpx
         key = (sys.stdin.readline().strip() if args.api_key_stdin else
@@ -108,8 +128,12 @@ def run(args):
     try:
         with cache.open("a", encoding="utf-8", buffering=1) as stream:
             for row in pending:
+                if args.backend == "gpu":
+                    torch.cuda.synchronize(0)
                 started = time.perf_counter()
                 response = predict(row["request"])
+                if args.backend == "gpu":
+                    torch.cuda.synchronize(0)
                 elapsed = time.perf_counter() - started
                 try:
                     prediction_vectors(parse_request(row["request"]), response)
@@ -154,7 +178,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     run_parser = sub.add_parser("run")
-    run_parser.add_argument("--backend", choices=["cpu", "official"], required=True)
+    run_parser.add_argument("--backend", choices=["cpu", "gpu", "official"], required=True)
     run_parser.add_argument("--checkpoint")
     run_parser.add_argument("--threads", type=int, default=8)
     run_parser.add_argument("--data", type=Path, default=Path("data/prepared/test_requests.jsonl"))
@@ -168,8 +192,8 @@ def main():
     report_parser.add_argument("--output", type=Path, required=True)
     report_parser.set_defaults(func=report)
     args = parser.parse_args()
-    if args.command == "run" and (args.threads < 1 or (args.backend == "cpu" and not args.checkpoint)):
-        parser.error("CPU run needs --checkpoint and a positive thread count")
+    if args.command == "run" and (args.threads < 1 or (args.backend in {"cpu", "gpu"} and not args.checkpoint)):
+        parser.error("Local run needs --checkpoint and a positive thread count")
     args.func(args)
 
 
