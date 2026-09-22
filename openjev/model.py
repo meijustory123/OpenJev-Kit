@@ -108,9 +108,11 @@ class DecisionModel(torch.nn.Module):
         return self.head(pooled.to(self.head.weight.dtype)).squeeze(-1).float()
 
 
-def build_model(base_model, checkpoint=None, training=True):
+def build_model(base_model, checkpoint=None, training=True, dtype=None):
     source = Path(checkpoint) / "backbone" if checkpoint else Path(base_model)
-    backbone = load_text_backbone(source, dtype=torch.float32 if training else torch.bfloat16)
+    if dtype is None:
+        dtype = torch.float32 if training else torch.bfloat16
+    backbone = load_text_backbone(source, dtype=dtype)
     model = DecisionModel(backbone)
     if checkpoint:
         metadata = json.loads((Path(checkpoint) / "decision_config.json").read_text(encoding="utf-8"))

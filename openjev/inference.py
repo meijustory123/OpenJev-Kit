@@ -18,9 +18,9 @@ class Engine:
         if micro_batch_size < 1:
             raise ValueError("micro_batch_size 必须为正整数")
         self.tokenizer = get_tokenizer(checkpoint / "tokenizer")
-        self.model = build_model(None, checkpoint, training=False)
-        if device == "cpu":
-            self.model = self.model.float()
+        # Load CPU weights directly in FP32; BF16 -> FP32 would lose checkpoint precision.
+        dtype = torch.float32 if torch.device(device).type == "cpu" else torch.bfloat16
+        self.model = build_model(None, checkpoint, training=False, dtype=dtype)
         self.model = self.model.to(device).eval()
 
     @torch.inference_mode()
