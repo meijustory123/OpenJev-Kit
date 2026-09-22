@@ -16,6 +16,7 @@ IMPORTS = {
     "torch": "torch", "transformers": "transformers", "accelerate": "accelerate",
     "safetensors": "safetensors", "fastapi": "fastapi", "uvicorn": "uvicorn",
     "httpx": "httpx", "psutil": "psutil", "pytest": "pytest", "filelock": "filelock",
+    "huggingface_hub": "huggingface_hub",
 }
 
 

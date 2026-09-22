@@ -13,7 +13,7 @@ from tests.test_protocol import example
 def checkpoint(root, step, complete=True):
     path = root / f"checkpoint-{step:06d}"
     for name in ["decision_config.json", "decision_head.safetensors", "backbone/config.json",
-                 "backbone/model.safetensors", "tokenizer/tokenizer_config.json"]:
+                 "backbone/model.safetensors", "tokenizer/tokenizer_config.json", "tokenizer/tokenizer.json"]:
         file = path / name
         file.parent.mkdir(parents=True, exist_ok=True)
         file.write_text("{}")

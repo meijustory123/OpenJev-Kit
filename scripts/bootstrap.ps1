@@ -71,7 +71,7 @@ function Install-ProjectPython {
     $archive = Join-Path $downloads ('python-' + $config.version + '-' + $config.build + '.tar.gz')
     $verified = (Test-Path -LiteralPath $archive) -and ((Get-ArchiveHash $archive) -eq $config.sha256)
     if (-not $verified) {
-        Write-Host "[2/5] 正在下载 Python $($config.version)（约 25 MB），请稍候……"
+        Write-Host "[2/6] 正在下载 Python $($config.version)（约 25 MB），请稍候……"
         [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
         $temporary = $archive + '.download'
         $downloaded = $false
@@ -94,7 +94,7 @@ function Install-ProjectPython {
         }
         Move-Item -LiteralPath (Assert-ProjectPath $temporary) -Destination (Assert-ProjectPath $archive) -Force
     }
-    Write-Host '[2/5] Python 下载已校验，正在安装到项目目录……'
+    Write-Host '[2/6] Python 下载已校验，正在安装到项目目录……'
     $stage = Assert-ProjectPath (Join-Path $ProjectRoot ('.runtime/python-stage-' + [Guid]::NewGuid().ToString('N')))
     New-Item -ItemType Directory -Path $stage | Out-Null
     & $tar.Source -xzf $archive -C $stage
@@ -106,11 +106,11 @@ function Install-ProjectPython {
 }
 
 function Ensure-ProjectEnvironment {
-    Write-Host '[1/5] 正在检查 Python 3.11 与项目环境……'
+    Write-Host '[1/6] 正在检查 Python 3.11 与项目环境……'
     $environmentDir = Assert-ProjectPath (Join-Path $ProjectRoot '.venv')
     $environmentPython = Join-Path $environmentDir 'Scripts/python.exe'
     if ((Find-CompatiblePython $environmentPython) -and (Test-Path -LiteralPath (Join-Path $environmentDir 'Scripts/pythonw.exe'))) {
-        Write-Host '[2/5] 已找到可用的项目 Python 3.11，继续检查依赖。'
+        Write-Host '[2/6] 已找到可用的项目 Python 3.11，继续检查依赖。'
         return $environmentPython
     }
     $basePython = $null
@@ -130,7 +130,7 @@ function Ensure-ProjectEnvironment {
         }
     }
     if (-not $basePython) { $basePython = Install-ProjectPython }
-    Write-Host '[3/5] 正在创建独立项目环境……'
+    Write-Host '[3/6] 正在创建独立项目环境……'
     Backup-ProjectPath $environmentDir
     & $basePython -I -m venv $environmentDir
     if ($LASTEXITCODE -ne 0 -or -not (Find-CompatiblePython $environmentPython)) { throw '创建项目环境失败。' }
@@ -168,12 +168,15 @@ function Start-OpenJevBootstrap {
         Start-Transcript -Path $log | Out-Null
         $transcript = $true
         $executable = Ensure-ProjectEnvironment
-        Write-Host '[4/5] 正在检查并安装缺失依赖，首次安装可能需要较长时间……'
+        Write-Host '[4/6] 正在检查并安装缺失依赖，首次安装可能需要较长时间……'
         & $executable -m scripts.bootstrap_environment --torch $Torch --index-url $IndexUrl
         if ($LASTEXITCODE -ne 0) { throw '依赖安装或检查未完成。请查看上方错误；再次双击可重试。' }
-        Write-Host '[5/5] 环境已就绪。'
+        Write-Host '环境已就绪。'
         if (-not $NoLaunch) {
-            Write-Host '正在启动模型网页……'
+            Write-Host '[5/6] 正在检查本地模型，缺少时将从 Hugging Face 下载……'
+            & $executable -m scripts.download_model
+            if ($LASTEXITCODE -ne 0) { throw '模型下载或校验未完成。请查看上方错误；再次双击可继续。' }
+            Write-Host '[6/6] 正在启动模型网页……'
             Start-Process -FilePath (Join-Path $ProjectRoot '.venv/Scripts/pythonw.exe') -ArgumentList @('-m', 'scripts.launch_web') -WorkingDirectory $ProjectRoot -WindowStyle Hidden | Out-Null
         }
     } catch {

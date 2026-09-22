@@ -29,7 +29,7 @@ def available_checkpoints(output):
         except ValueError:
             continue
         required = ["COMPLETE", "decision_config.json", "decision_head.safetensors",
-                    "backbone/config.json", "tokenizer/tokenizer_config.json"]
+                    "backbone/config.json", "tokenizer/tokenizer_config.json", "tokenizer/tokenizer.json"]
         if all((path / name).is_file() for name in required) and any((path / "backbone").glob("*.safetensors")):
             found.append((step, path.resolve()))
     return [path for _, path in sorted(found)]

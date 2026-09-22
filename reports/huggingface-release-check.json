@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-09-22T06:54:25.701967+00:00",
+  "repo_id": "cainai/OpenJev-Qwen3.5-0.8b",
+  "revision": "0de0ee38ef7435743ee16f00d2c91719f5cd885c",
+  "public": true,
+  "anonymous_metadata_verified": true,
+  "source_checkpoint": "checkpoint-001800",
+  "files": [
+    {
+      "path": "config.json",
+      "size": 1862,
+      "lfs_sha256": null
+    },
+    {
+      "path": "model.safetensors",
+      "size": 3009606928,
+      "lfs_sha256": "396ed872d37a16355d3b4fdf5d2873952aabaaa9bd72832d3200875bd0d90c74"
+    },
+    {
+      "path": "COMPLETE",
+      "size": 4,
+      "lfs_sha256": null
+    },
+    {
+      "path": "decision_config.json",
+      "size": 571,
+      "lfs_sha256": null
+    },
+    {
+      "path": "decision_head.safetensors",
+      "size": 4236,
+      "lfs_sha256": "2a17e21131cfe51068197c2deddc64b57032b07761ecfb12cd345f9c476c8560"
+    },
+    {
+      "path": "chat_template.jinja",
+      "size": 7908,
+      "lfs_sha256": null
+    },
+    {
+      "path": "tokenizer.json",
+      "size": 19989343,
+      "lfs_sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size": 1129,
+      "lfs_sha256": null
+    }
+  ]
+}

@@ -19,17 +19,18 @@
 下载项目：
 
 ```powershell
-git clone https://github.com/meijustory123/openjev.git
-cd openjev
+git clone https://github.com/meijustory123/OpenJev-Kit.git
+cd OpenJev-Kit
 ```
 
 在 **Windows 10/11 x64** 上，双击 **[启动决策模型.cmd](启动决策模型.cmd)** 即可：
 
 1. 自动下载安装缺失的 Python 3.11 和依赖，首次安装需要联网。
-2. 自动打开网页，加载本地最新的已训练模型。
-3. 在网页填写内容和问题，或使用内置示例查看结果。
+2. 本地没有完整模型时，自动从 [Hugging Face](https://huggingface.co/cainai/OpenJev-Qwen3.5-0.8b) 下载第 1800 步模型，并显示进度。
+3. 自动打开网页，加载模型。
+4. 在网页填写内容和问题，或使用内置示例查看结果。
 
-已训练的模型放在 `outputs/decision-full/` 下；没有模型时，网页会等待训练产生检查点。仓库不附带模型权重和生成后的训练数据，可按下文自行准备。
+模型保存在 `outputs/decision-full/` 下。下载中断后再次双击可继续；已有完整模型时直接复用，无需登录 Hugging Face。只有想训练自己的模型时，才需要按下文准备训练数据。
 
 使用结束后，点击网页“退出工具”，或双击 **[关闭决策模型.cmd](关闭决策模型.cmd)**。更多操作见 [网页使用说明](docs/5、一键网页工具.md)。
 

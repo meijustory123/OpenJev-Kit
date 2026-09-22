@@ -29,7 +29,6 @@ cd /d "%~dp0"
 chcp 65001 >nul
 set PYTHONIOENCODING=utf-8
 if not exist "runtime\\python.exe" goto missing
-echo 正在检查运行环境，首次启动请稍候……
 "%~dp0runtime\\python.exe" -I -X utf8 "%~dp0scripts\\portable_entry.py" --check
 if errorlevel 1 goto failed
 start "" "%~dp0runtime\\pythonw.exe" -I -X utf8 "%~dp0scripts\\portable_entry.py"
@@ -63,6 +62,8 @@ CPU 推理可用，速度取决于电脑配置；建议至少 16 GB 内存。
 
 请保留整个文件夹的结构。关闭工具后可整体移动，不依赖原来的解压位置。
 重复双击会打开已有网页；只关闭浏览器不会结束后台模型进程。
+启动检查会关闭当前窗口的快速编辑模式，避免鼠标误选文字导致暂停。
+旧版若卡住且窗口标题显示“选择”，按 Esc 或回车即可恢复。
 启动日志：outputs\\webapp\\server.log
 模型位置：outputs\\decision-full\\checkpoint-001800
 

@@ -1,0 +1,56 @@
+{
+  "repo_id": "cainai/OpenJev-Qwen3.5-0.8b",
+  "revision": "0de0ee38ef7435743ee16f00d2c91719f5cd885c",
+  "checkpoint_name": "checkpoint-001800",
+  "training_epoch": 3,
+  "files": [
+    {
+      "remote_path": "config.json",
+      "local_path": "backbone/config.json",
+      "size": 1862,
+      "sha256": "b612a4f7f57c06d18c98fa079379d9f37129396264a8fbb4a6517a25dda1edc8"
+    },
+    {
+      "remote_path": "model.safetensors",
+      "local_path": "backbone/model.safetensors",
+      "size": 3009606928,
+      "sha256": "396ed872d37a16355d3b4fdf5d2873952aabaaa9bd72832d3200875bd0d90c74"
+    },
+    {
+      "remote_path": "COMPLETE",
+      "local_path": "COMPLETE",
+      "size": 4,
+      "sha256": "9f2a59a60e65fbcd5a3e1b7248adf92890ce3a32b19e43fb4751c2657196de13"
+    },
+    {
+      "remote_path": "decision_config.json",
+      "local_path": "decision_config.json",
+      "size": 571,
+      "sha256": "56e379d0fd3aebc7cb0006fc88be1f4eedb31bbc95593ea2991ad07e6633a09c"
+    },
+    {
+      "remote_path": "decision_head.safetensors",
+      "local_path": "decision_head.safetensors",
+      "size": 4236,
+      "sha256": "2a17e21131cfe51068197c2deddc64b57032b07761ecfb12cd345f9c476c8560"
+    },
+    {
+      "remote_path": "chat_template.jinja",
+      "local_path": "tokenizer/chat_template.jinja",
+      "size": 7908,
+      "sha256": "306abaf09cf3a6c0d14128373a72925bda3d7de2616a5642804d9768c7d2f78c"
+    },
+    {
+      "remote_path": "tokenizer.json",
+      "local_path": "tokenizer/tokenizer.json",
+      "size": 19989343,
+      "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+    },
+    {
+      "remote_path": "tokenizer_config.json",
+      "local_path": "tokenizer/tokenizer_config.json",
+      "size": 1129,
+      "sha256": "7265308b78a3cd7071a7e6a69e49def4e54a01b9f9d0872885de7b8ef1ad073e"
+    }
+  ]
+}
