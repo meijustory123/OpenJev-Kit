@@ -26,7 +26,7 @@ cd OpenJev-Kit
 在 **Windows 10/11 x64** 上，双击 **[启动决策模型.cmd](启动决策模型.cmd)** 即可：
 
 1. 自动下载安装缺失的 Python 3.11 和依赖，首次安装需要联网。
-2. 本地没有完整模型时，自动从 [Hugging Face](https://huggingface.co/cainai/OpenJev-Qwen3.5-0.8b) 下载第 1800 步模型，并显示进度。
+2. 本地没有完整模型时，自动从 [Hugging Face](https://huggingface.co/cainai/OpenJev-Qwen3.5-0.8b) 下载模型，并显示进度。
 3. 自动打开网页，加载模型。
 4. 在网页填写内容和问题，或使用内置示例查看结果。
 
